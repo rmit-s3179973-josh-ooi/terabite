@@ -41,4 +41,17 @@ class LoginController extends Controller
     {
         return view('auth/login');
     }
+
+    protected function create(Request $request)
+    {
+
+        if(Auth::validate($request->all()))
+        {
+            $this->throwValidationException($request, $validator);
+        }
+
+        // $user = 
+
+        Auth::login
+    }
 }

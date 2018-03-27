@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 Route::group(['as'=>'website-'], function() {
-	Route::get('/register', ['as'=>'register','uses'=>'Auth\RegisterController@gindex']);
+	Route::get('/register', ['as'=>'register','uses'=>'Auth\RegisterController@index']);
 	Route::get('/login', ['as'=>'login', 'uses'=>'Auth\LoginController@index']);
+	Route::post('/login', ['as'=>'login', 'uses'=>'Auth\LoginController@create']);
 });
