@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['as'=>'website-'], function() {
+	Route::get('/register', ['as'=>'register','uses'=>'Auth\RegisterController@gindex']);
+	Route::get('/login', ['as'=>'login', 'uses'=>'Auth\LoginController@index']);
+});

@@ -55,6 +55,11 @@ class RegisterController extends Controller
         ]);
     }
 
+    protected function index()
+    {
+        return view('auth/register');
+    }
+
     /**
      * Create a new user instance after a valid registration.
      *
