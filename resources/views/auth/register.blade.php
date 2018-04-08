@@ -32,10 +32,6 @@
 			{!! Form::password('password_confirmation',['class'=>'input','placeholder'=>'Confirm Password']) !!}
 		</div>
 		<div class="form-group">
-			{!! Form::text('location',Input::old('location') !== null ? Input::old('location') : null,['class'=>'input','placeholder'=>'Location']) !!}
-			
-		</div>		
-		<div class="form-group">
 			{!! form::submit('Submit',['class'=>'btn btn-submit']) !!}
 		</div>
 		{!! Form::close() !!}
