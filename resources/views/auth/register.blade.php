@@ -1,8 +1,10 @@
 @extends('layout')
 
 @section('head')
+
 {!! Html::style(asset('assets/css/website/form.css'))!!}
 @endsection
+
 @section('content')
 <div class="wrap">
 	
@@ -20,7 +22,7 @@
 	<div class="form-wrap">
 		{!! Form::open() !!}
 		<div class="form-group">	
-		{!! Form::text('name',Input::old('name') !== null ? Input::old('name') : null,['class'=>'input','placeholder'=>'Name']) !!}				
+		{!! Form::text('name',Input::old('name') !== null ? Input::old('name') : null,['class'=>'input newClass','placeholder'=>'Name']) !!}				
 		</div>
 		<div class="form-group">		
 			{!! Form::email('email',Input::old('email') !== null ? Input::old('email') : null,['class'=>'input','placeholder'=>'Email']) !!}
