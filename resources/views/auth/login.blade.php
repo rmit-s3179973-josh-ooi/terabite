@@ -29,7 +29,7 @@
 		{!! Form::label('remember','Remember Me') !!}
 		</div>
 		<div class="form-group reset">
-			<p>Can't remember your password? <a href="#">Click here</a>.</p>
+			<p>Can't remember your password? <a href="{{ route('website-reset-password')}}">Click here</a>.</p>
 		</div>
 		<div class="form-group">
 			{!! form::submit('Submit',['class'=>'btn btn-submit']) !!}
