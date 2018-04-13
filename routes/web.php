@@ -22,4 +22,6 @@ Route::group(['as'=>'website-'], function() {
 	Route::post('/register', ['as'=>'register-post','uses'=>'Auth\RegisterController@register']);
 	Route::get('/logout', ['as'=>'regiter-post','uses'=>'Auth\LoginController@logout']);
 	Route::get('/password/reset', ['as'=>'reset-password', 'uses'=>'Auth\ForgotPasswordController@showLinkRequestForm']);
+	Route::post('/password/reset', ['as'=>'reset-password-post', 'uses'=>'Auth\ForgotPasswordController@sendResetLinkEmail']);
+	
 });
