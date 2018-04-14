@@ -3,6 +3,7 @@
 @section('head')
 
 {!! Html::style(asset('assets/css/website/form.css'))!!}
+
 @endsection
 
 @section('content')
@@ -19,24 +20,28 @@
 		</div>
 	</div>
 	@endif
+
+	<body>
+	   <h1> Please Register </h1>
 	<div class="form-wrap">
 		{!! Form::open() !!}
 		<div class="form-group">	
-		{!! Form::text('name',Input::old('name') !== null ? Input::old('name') : null,['class'=>'input newClass','placeholder'=>'Name']) !!}				
+		{!! Form::text('name',Input::old('name') !== null ? Input::old('name') : null,['class'=>'input name','placeholder'=>'Name']) !!}				
 		</div>
 		<div class="form-group">		
-			{!! Form::email('email',Input::old('email') !== null ? Input::old('email') : null,['class'=>'input','placeholder'=>'Email']) !!}
+			{!! Form::email('email',Input::old('email') !== null ? Input::old('email') : null,['class'=>'input email','placeholder'=>'Email']) !!}
 		</div>
 		<div class="form-group">
-			{!! Form::password('password',['class'=>'input','placeholder'=>'Password']) !!}			
+			{!! Form::password('password',['class'=>'input password','placeholder'=>'Password']) !!}			
 		</div>
 		<div class="form-group">
-			{!! Form::password('password_confirmation',['class'=>'input','placeholder'=>'Confirm Password']) !!}
+			{!! Form::password('password_confirmation',['class'=>'input confirm','placeholder'=>'Confirm Password']) !!}
 		</div>
 		<div class="form-group">
 			{!! form::submit('Submit',['class'=>'btn btn-submit']) !!}
 		</div>
 		{!! Form::close() !!}
 	</div>
+	</body>
 </div>
 @endsection
