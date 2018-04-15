@@ -1,8 +1,8 @@
 @extends('layout')
 
-@section('head')
+@section('css')
 
-{!! Html::style(asset('assets/css/website/form.css'))!!}
+{!! Html::style(asset('css/website/form.css')) !!}
 
 @endsection
 
@@ -22,26 +22,39 @@
 	@endif
 
 	<body>
-	   <h1> Please Register </h1>
-	<div class="form-wrap">
+	   
+	<div class="wrapper">
+	<div class="registercontent">	
+	<div class="registerheading">
+	Register
+	</div>
 		{!! Form::open() !!}
-		<div class="form-group">	
-		{!! Form::text('name',Input::old('name') !== null ? Input::old('name') : null,['class'=>'input name','placeholder'=>'Name']) !!}				
+		<div class="group">	
+		<label for="">
+			Email:</label>
+		{!! Form::text('name',Input::old('name') !== null ? Input::old('name') : null,['class'=>'name','placeholder'=>'Name']) !!}				
 		</div>
-		<div class="form-group">		
-			{!! Form::email('email',Input::old('email') !== null ? Input::old('email') : null,['class'=>'input email','placeholder'=>'Email']) !!}
+		<div class="group">	
+		<label for="txtUserEmail">
+			Email:</label>
+			{!! Form::email('email',Input::old('email') !== null ? Input::old('email') : null,['class'=>'email','placeholder'=>'Email']) !!}
 		</div>
-		<div class="form-group">
-			{!! Form::password('password',['class'=>'input password','placeholder'=>'Password']) !!}			
+		<div class="group">
+		<label for="txtUserEmail">
+			Email:</label>
+			{!! Form::password('password',['class'=>'password','placeholder'=>'Password']) !!}			
 		</div>
-		<div class="form-group">
-			{!! Form::password('password_confirmation',['class'=>'input confirm','placeholder'=>'Confirm Password']) !!}
+		<div class="group">
+		<label for="txtUserEmail">
+			Email:</label>
+			{!! Form::password('password_confirmation',['class'=>'confirm','placeholder'=>'Confirm Password']) !!}
 		</div>
-		<div class="form-group">
-			{!! form::submit('Submit',['class'=>'btn btn-submit']) !!}
+		<div class="group">
+			{!! form::submit('Submit',['class'=>'registerbtn']) !!}
 		</div>
 		{!! Form::close() !!}
 	</div>
+</div>
 	</body>
 </div>
 @endsection
