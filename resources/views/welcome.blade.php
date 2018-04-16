@@ -1,11 +1,27 @@
-@extends('layout')
+<!doctype html>
+<html>
+	<head>
+		@extends('layout')
+		@include('head')
+	</head>
+	<body>
+		<div class="container">
+			<header class="row">
+				@include('header')
+				@section('header')
+			</header>
 
-@section('header')
+			<div id="main" class="row">
+				@section('content')
+			</div>
 
-@include('head')
+			<footer class="row">
+				@include('footer')
+			</footer>
+			
+			@endsection
+			@endsection
 
-@endsection
-
-@section('content')
-@include('header')
-@endsection
+		</div>
+	</body>
+</html>
