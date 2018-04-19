@@ -1,1 +1,3 @@
-<div id="copyright text-right">© Copyright 2018 Terabite</div>
+<footer id="footer" class="text-center">
+		<p>copyright 2018 &copy; Terabite</p>
+</footer>

@@ -7,5 +7,5 @@
 
 @section('sidebar')
 	@parent
-	<p>appended to sidebar</p>
+	<p></p>
 @endsection

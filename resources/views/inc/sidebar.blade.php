@@ -1,7 +1,7 @@
 @section('sidebar')
 		<div class="sidebar">
-			<h3>sidebar</h3>
-			this is sidebar
+			<h3>Categories</h3>
+			<a href="url">Laptops</a>
 			
 		</div>
 		@show
