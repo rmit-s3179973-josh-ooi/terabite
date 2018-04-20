@@ -18,20 +18,18 @@
 
 	<div class="container">
 		@if(Request::is('/'))
-		@include('inc.showcase')
+		@include('inc.showcase') <!-- for something else -->
 		@endif
 		<div class="row">
-			<div class="col-md-8 col-lg-8">
-				@yield('content')
-			</div>
-			<div class="col-md-4 col-lg-4">
+			<div class="col-md-2 col-lg-2">
 			@include('inc.sidebar')
+			</div>
+			<div class="col-md-10 col-lg-10">
+				@yield('content')
 			</div>
 		</div>
 	</div>
 
-	<footer id="footer" class="text-center">
-		<p>copyright 2018 &copy; Terabite</p>
-	</footer>
+	@include('footer')
 </body>
 </html>
