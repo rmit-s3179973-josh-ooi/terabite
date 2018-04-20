@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('css')
-{!! Html::style(asset('assets/css/website/form.css')) !!}
+{!! Html::style(asset('css/website/form.css')) !!}
 @endsection
 @section('content')
 	
@@ -16,26 +16,40 @@
 		</div>
 	</div>
 	@endif
+	<body>
+	
 	<div class="form-wrap">
+	<div class="logincontent">
+	<div class="loginheading">
+		Login
+	</div>
+
 		{!! Form::open() !!}
-		<div class="form-group">	
-		{!! Form::email('email',Input::old('email') !== null ? Input::old('email') : null,['class'=>'input','placeholder'=>'Email']) !!}				
+		<div class="group">	
+		<label for="txtUserEmail">
+			Email:</label>
+		{!! Form::email('email',Input::old('email') !== null ? Input::old('email') : null,['class'=>'','placeholder'=>'Email']) !!}				
 		</div>		
-		<div class="form-group">
-			{!! Form::password('password',['class'=>'input','placeholder'=>'Password']) !!}						
+		<div class="group">
+		<label for="txtPassword">
+			Password:</label>
+			{!! Form::password('password',['class'=>'','placeholder'=>'Password']) !!}						
 		</div>
-		<div class="form-group">
+		<div class="group">
 		{!! Form::checkbox('remember',1) !!}
-		{!! Form::label('remember','Remember Me') !!}
+		<label class="check"
+                for="chbRemember">Remember me next time</label>
 		</div>
-		<div class="form-group reset">
+		<div class="group">
 			<p>Can't remember your password? <a href="{{ route('website-reset-password')}}">Click here</a>.</p>
 		</div>
-		<div class="form-group">
-			{!! form::submit('Submit',['class'=>'btn btn-submit']) !!}
+		<div class="group">
+			{!! form::submit('Submit',['class'=>'loginbtn']) !!}
 		</div>
 		{!! Form::close() !!}
 	</div>
+</div>
+	</body>
 </div>
 @endsection
 

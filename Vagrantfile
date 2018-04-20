@@ -24,6 +24,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         end
     end
 
+    config.vm.provider "virtualbox" do |vb|
+    	vb.customize ["modifyvm",:id, "--cableconnected1","on"]
+    end
+
     if File.exist? homesteadYamlPath then
         settings = YAML::load(File.read(homesteadYamlPath))
     elsif File.exist? homesteadJsonPath then
@@ -42,8 +46,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         config.hostsupdater.aliases = settings['sites'].map { |site| site['map'] }
     end
 
-    config.vm.network "forwarded_port", guest: 22, host: 2222, host_ip:"127.0.0.1", id:'ssh'
-    config.vm.provider 'virtualbox' do |vb|
-	vb.customize ['modifyvm',:id,'--cableconnected1','on']
-    end
+    config.vm.network "forwarded_port", guest:22, host:2222, host_ip:"127.0.0.1", id:'ssh'
 end

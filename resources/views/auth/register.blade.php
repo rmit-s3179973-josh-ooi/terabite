@@ -1,8 +1,11 @@
 @extends('layout')
 
-@section('head')
-{!! Html::style(asset('assets/css/website/form.css'))!!}
+@section('css')
+
+{!! Html::style(asset('css/website/form.css')) !!}
+
 @endsection
+
 @section('content')
 <div class="wrap">
 	
@@ -17,24 +20,41 @@
 		</div>
 	</div>
 	@endif
-	<div class="form-wrap">
+
+	<body>
+	   
+	<div class="wrapper">
+	<div class="registercontent">	
+	<div class="registerheading">
+	Register
+	</div>
 		{!! Form::open() !!}
-		<div class="form-group">	
-		{!! Form::text('name',Input::old('name') !== null ? Input::old('name') : null,['class'=>'input','placeholder'=>'Name']) !!}				
+		<div class="group">	
+		<label for="">
+			Name:</label>
+		{!! Form::text('name',Input::old('name') !== null ? Input::old('name') : null,['class'=>'name','placeholder'=>'Name']) !!}				
 		</div>
-		<div class="form-group">		
-			{!! Form::email('email',Input::old('email') !== null ? Input::old('email') : null,['class'=>'input','placeholder'=>'Email']) !!}
+		<div class="group">	
+		<label for="txtUserEmail">
+			Email:</label>
+			{!! Form::email('email',Input::old('email') !== null ? Input::old('email') : null,['class'=>'email','placeholder'=>'Email']) !!}
 		</div>
-		<div class="form-group">
-			{!! Form::password('password',['class'=>'input','placeholder'=>'Password']) !!}			
+		<div class="group">
+		<label for="txtUserEmail">
+			Password:</label>
+			{!! Form::password('password',['class'=>'password','placeholder'=>'Password']) !!}			
 		</div>
-		<div class="form-group">
-			{!! Form::password('password_confirmation',['class'=>'input','placeholder'=>'Confirm Password']) !!}
+		<div class="group">
+		<label for="txtUserEmail">
+			Confirm Password:</label>
+			{!! Form::password('password_confirmation',['class'=>'confirm','placeholder'=>'Confirm Password']) !!}
 		</div>
-		<div class="form-group">
-			{!! form::submit('Submit',['class'=>'btn btn-submit']) !!}
+		<div class="group">
+			{!! form::submit('Submit',['class'=>'registerbtn']) !!}
 		</div>
 		{!! Form::close() !!}
 	</div>
+</div>
+	</body>
 </div>
 @endsection
