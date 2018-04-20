@@ -31,7 +31,7 @@
 		{!! Form::open() !!}
 		<div class="group">	
 		<label for="">
-			Email:</label>
+			Name:</label>
 		{!! Form::text('name',Input::old('name') !== null ? Input::old('name') : null,['class'=>'name','placeholder'=>'Name']) !!}				
 		</div>
 		<div class="group">	
@@ -41,12 +41,12 @@
 		</div>
 		<div class="group">
 		<label for="txtUserEmail">
-			Email:</label>
+			Password:</label>
 			{!! Form::password('password',['class'=>'password','placeholder'=>'Password']) !!}			
 		</div>
 		<div class="group">
 		<label for="txtUserEmail">
-			Email:</label>
+			Confirm Password:</label>
 			{!! Form::password('password_confirmation',['class'=>'confirm','placeholder'=>'Confirm Password']) !!}
 		</div>
 		<div class="group">
