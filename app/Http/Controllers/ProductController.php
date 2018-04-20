@@ -17,7 +17,7 @@ class ProductController extends Controller
 
     protected function search(Request $request)
     {
-    	$products = Product::with(['images','category'])->all();
+    	$products = Product::with(['images'])->get();
 
     	return view('product_listing',['products'=>$products]);
     }
