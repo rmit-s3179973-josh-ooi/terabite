@@ -21,18 +21,23 @@
 		</div>
 	</div>
 	@endif
-	<div class="wrapper">
-	<div class="emailcontent">
-		{!! Form::open() !!}
-		<label for="">
-			Email:</label>
-		<div class="group">		
-			{!! Form::email('email',Input::old('email') !== null ? Input::old('email') : null,['class'=>'email','placeholder'=>'Email']) !!}
+		<div class="main">
+			<div id="content3">
+
+				<div  id="border-two">
+					<div class="heading">Reset Password</div>
+			{!! Form::open() !!}
+
+		<div class="group field-sep-one">
+			<label for="">
+				Email</label>
+			{!! Form::email('email',Input::old('email') !== null ? Input::old('email') : null,['class'=>'form-control email','placeholder'=>'Email']) !!}
 		</div>
-		<div class="group">
-			{!! form::submit('Submit',['class'=>'emailbtn']) !!}
+		<div class="group field-sep-one">
+			{!! form::submit('Submit',['class'=>'form-control btn btn-primary']) !!}
 		</div>
 		{!! Form::close() !!}
+				</div>
 	</div>
 	</div>
 

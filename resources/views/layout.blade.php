@@ -21,9 +21,11 @@
 		@include('inc.showcase') <!-- for something else -->
 		@endif
 		<div class="row">
-			<div class="col-md-2 col-lg-2">
+
+			<!--  <div class="col-md-2 col-lg-2">
 			@include('inc.sidebar')
 			</div>
+			-->
 			<div class="col-md-10 col-lg-10">
 				@yield('content')
 			</div>
