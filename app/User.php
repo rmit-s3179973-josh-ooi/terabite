@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','activated',
     ];
 
     /**
@@ -30,5 +30,10 @@ class User extends Authenticatable
     public function categories()
     {
         return $this->belongsToMany(Category::class);
+    }
+
+    public function verification()
+    {
+        return $this->hasOne(VerificationCode::class);
     }
 }

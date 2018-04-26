@@ -16,6 +16,9 @@ Route::get('/', function () {
 });
 
 Route::group(['as'=>'website-'], function() {
+	Route::get('/',['as'=>'home','uses'=>function () {
+    return view('welcome');
+	}]);
 	Route::get('/register', ['as'=>'register-get','uses'=>'Auth\RegisterController@index']);
 	Route::get('/login', ['as'=>'login-get', 'uses'=>'Auth\LoginController@index']);
 	Route::post('/login', ['as'=>'login-post', 'uses'=>'Auth\LoginController@login']);
@@ -25,4 +28,5 @@ Route::group(['as'=>'website-'], function() {
 	Route::post('/password/reset', ['as'=>'reset-password-post', 'uses'=>'Auth\ForgotPasswordController@sendResetLinkEmail']);
 	Route::get('/product/{id}', ['as'=>'get-product', 'uses'=>'ProductController@getProduct']);
 	Route::get('/products', ['as'=>'search', 'uses'=>'ProductController@search']);
+	Route::get('/activate/{code}',['as'=>'verification-code','uses'=>'VerificationController@activate']);
 });
