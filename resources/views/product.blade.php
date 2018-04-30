@@ -12,7 +12,8 @@
 
 @section('content')
 
-
+{{ dd($product)}}
+	{{$product->product_category_id}}
 <h2><strong>{{$product->product_name}}</strong></h2>
 
 	<div class="product-image" name ="img" >
