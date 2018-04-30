@@ -43,7 +43,7 @@
 						   for="chbRemember">Remember me</label>
 				</div>
 				<div class="group content-info-check">
-					<p><a href="{{ route('website-reset-password')}}">Forgot password?</a></p>
+					<p><a href="{{ route('website.get.reset-password')}}">Forgot password?</a></p>
 				</div>
 				<div class="group content-info field-sep">
 					{!! Form::submit('Submit',['class'=>'form-control btn btn-primary']) !!}
@@ -55,7 +55,7 @@
 				<div class="column content-info" id="border-one">
 					<div><h1 id="subheading"><strong>Don't Have An Account yet?</strong></h1>
 						<h6>Register now to enjoy the best deals on the internet.</h6></div>
-					<a  href="{!! url('register') !!}" class="form-control btn btn-primary">Sign Up Now</a>
+					<a  href="{{ route('website.get.register') }}" class="form-control btn btn-primary">Sign Up Now</a>
 				</div>
 			</div>
 
