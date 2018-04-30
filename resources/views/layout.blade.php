@@ -14,7 +14,7 @@
 	{!! Html::script(asset('assets/js/jquery.min.js')) !!}	
 	@yield('js')
 </head>
-<body>		
+<body>	
 	@include('inc.navbar')
 
 	<div class="container">

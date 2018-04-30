@@ -28,7 +28,7 @@
 				<div class="column content-info" id="border-one">
 					<div ><h1 id="subheading"><strong>Already Have An Account?</strong></h1>
 						<h6>Log in now to view products tailored for you!</h6></div>
-					<a href="{!! url('login') !!}" class="form-control btn btn-primary">Login Now</a>
+					<a href="{{ route('website.get.register') }}" class="form-control btn btn-primary">Login Now</a>
 				</div>
 
 
