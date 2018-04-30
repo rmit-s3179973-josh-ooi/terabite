@@ -1,0 +1,91 @@
+body 
+    { 
+    font: 62.5%/1.5  "Lucida Grande", "Lucida Sans", Tahoma, Verdana, sans-serif; 
+    background: url(/images/wallpaper.png) repeat; 
+    color: #000000;     
+    text-align:center; 
+} 
+
+
+
+
+.product-image img{
+	width: 300px;
+	height:220px;
+    left:0;
+	margin-left: 0px;
+}
+
+.qty input{
+    width: 10%;
+    color: #666 !important;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size:14px;
+	padding: 10px 0px;
+}
+.product-d {
+    text-align: center;
+    color:red;
+    font-size: 20px;
+	text-align: center;
+}
+
+.product-price{
+    position: absolute;
+    bottom:75px;
+    right: 270px;
+    color:red;
+    padding:5px;
+    font-size: 20px;
+}
+.product-but btn btn-second{
+     position: absolute;
+    border-radius: 8px;
+	bottom: 10%;
+
+	
+}
+
+
+.nav ul {
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0;
+	overflow: hidden;
+    bottom: 40px;
+    position: absolute;
+	width: 100%;
+
+}
+
+.nav li {
+    float:left;
+
+}
+.nav a {
+      display: block;
+    color: black;
+    text-align: center;
+    padding: 6px 8px;
+    text-decoration: none;
+	word-spacing: 5px;
+	font-size: 20px;
+}
+.nav li a:hover:not(.active){
+    background-color: #999;
+}
+.active {
+    background-color: #999;
+}
+
+.tab-pane p{
+	 margin-left: 0px;
+	 margin-bottom: 0px;
+}
+#footer{
+	margin-top: 500px;
+	padding: 20px;
+	color: #fff;
+	background: #333;
+}
