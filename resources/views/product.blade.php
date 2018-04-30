@@ -13,7 +13,6 @@
 @section('content')
 
 
-
 <h2><strong>{{$product->product_name}}</strong></h2>
 
 	<div class="product-image" name ="img" >
@@ -68,4 +67,3 @@
 
 
 @endsection
-
