@@ -15,7 +15,8 @@ class ProductController extends Controller
     	
     	return view('product',['product'=>$product]);
     }
-
+    
+	
     protected function search(Request $request)
     {
     	$products = Product::with(['images'])->get();

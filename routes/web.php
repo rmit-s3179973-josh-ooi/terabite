@@ -28,9 +28,6 @@ Route::group(['as'=>'website.'], function() {
 		Route::post('/register', ['as'=>'register','uses'=>'Auth\RegisterController@register']);
 		Route::post('/password/reset', ['as'=>'reset-password', 'uses'=>'Auth\ForgotPasswordController@sendResetLinkEmail']);	
 	});
-	
-	
-
 });
 
 Route::get('/test',['as'=>'test','uses'=>'ProductController@test']);
