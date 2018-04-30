@@ -16,7 +16,7 @@
 
 <h2><strong>{{$product->product_name}}</strong></h2>
 
-	<div class="product-image" name ="img" >{{$product->images[0]}}
+	<div class="product-image" name ="img" >
 	@foreach ($product->images as $img)
 	        <img src="{{$img->url}}">
 	@endforeach

@@ -33,16 +33,16 @@ body
 
 .product-price{
     position: absolute;
-    bottom:75px;
-    right: 270px;
+    bottom:50px;
+    right: 370px;
     color:red;
     padding:5px;
     font-size: 20px;
 }
-.product-but btn btn-second{
-     position: absolute;
+.product-but {
+     position: center;
     border-radius: 8px;
-	bottom: 10%;
+	bottom: 110px;
 
 	
 }
