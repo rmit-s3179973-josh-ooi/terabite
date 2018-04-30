@@ -1,32 +1,91 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Terabite</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+
+@section('css')
+  {!! Html::style(asset('css/website/form.css')) !!}
+@endsection
+@section('content')
+
+<nav id="link1" class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="">
+      <img src="" width="30" height="30" class="d-inline-block align-top" alt="">Terabite
+    </a>
+
+    <div class="col-lg-6">
+      <div class="input-group">
+        <div>
+          <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+        </div>
+        <input type="text" class="form-control rounded-left" placeholder="Search">
+        <div class="input-group-btn">
+          <select aria-label="Categories" class="nav-link dropdown-toggle" size="1" id="navbarDropdownMenuLink">
+            <option value="0">All Categories</option>
+            <option value="">Computers &amp; Laptops</option>
+            <option value="">Headphones</option>
+            <option value="">Printers</option>
+            <option value="">Speakers</option>
+            <option value="">Tvs</option>
+            <option value="">Phones</option>
+            <option value="">Cameras</option>
+            <option value="">Accessories</option>
+            <option value="">Hardware</option>
+            <option value="">Coins</option>
+            <option value="">Collectables</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex ml-auto">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#globalNavbar" aria-controls="globalNavbar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+    </div>
 
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/login">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">profile</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
-            <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-      </div>
-    </nav>
+    <div>
+      <ul class="navbar-nav d-none d-lg-flex ml-2 order-3">
+        <li class="btn btn-cart pull-right">
+          <button type="button" class="btn btn-outline-primary">
+            Cart <span class="badge badge-light">4</span>
+          </button>
+        </li>
+      </ul>
+      <ul class="navbar-nav d-lg-none">
+        <li class="nav-item-divider"></li>
+        <li class="btn btn-cart pull-right">
+          <button type="button" class="btn btn-outline-light text-white">
+            Cart <span class="badge badge-light">4</span>
+          </button>
+        </li>
+      </ul>
+
+
+    </div>
+</nav>
+
+<div id="link2" class="navbar navbar-expand-lg navbar-light ">
+  <ul class="navbar-nav mr-auto order-1">
+    <li class="nav-item">
+      <a class="nav-link" href="#">Categories</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Brands</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">About Us</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Contact Us</a>
+    </li>
+  </ul>
+  <ul class="navbar-nav d-none d-lg-flex ml-2 order-3">
+    <li class="nav-item"><a class="nav-link" href="login">Login</a></li>
+    <li class="nav-item"><a class="nav-link" href="register">Sign up</a></li>
+  </ul>
+  <ul class="navbar-nav d-lg-none">
+    <li class="nav-item-divider"></li>
+    <li class="nav-item"><a class="nav-link" href="login">Login</a></li>
+    <li class="nav-item"><a class="nav-link" href="register">Sign up</a></li>
+  </ul>
+</div>
+
+
+

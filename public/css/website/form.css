@@ -1,189 +1,163 @@
 
-        /* Basics */
-        html, body
-        {
-            padding: 0;
-            margin: 0;
+
+        .main {
+            margin: auto;
+            vertical-align: middle;
+        }
+
+
+        /* Create three equal columns that floats next to each other */
+        .column {
+            float: left;
+            width: 50%;
+            /*padding: 50px;*/
+        }
+
+        /*.column2 {*/
+            /*float: left;*/
+            /*width: 50%;*/
+            /*padding: 15px;*/
+        /*}*/
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        #content1 {
+            margin: auto;
+            width: 120%;
+            padding: 10%;
+            vertical-align: middle;
+        }
+
+        #content2 {
+            margin: auto;
+            width: 120%;
+            padding: 5%;
+            vertical-align: middle;
+        }
+
+        #content3 {
+            margin: auto;
             width: 100%;
-            height: 100%;
-            font-family: "Helvetica Neue" , Helvetica, sans-serif;
-            background : #99ccff;
+            padding-top: 10%;
+            padding-left: 20%;
+            vertical-align: middle;
         }
-        .logincontent
+
+        /* Content border */
+
+        #border {
+            border: 1px solid #2e6da4;
+            padding: 20px;
+            border-radius: 25px;
+            margin: 0px;
+        }
+
+        #border-one {
+            margin-left: 0px;
+            padding: 10%;
+            border-radius: 25px;
+
+        }
+
+        #border-two {
+            border: 1px solid #2e6da4;
+            margin-left: 0px;
+            padding: 0;
+            border-radius: 25px;
+
+        }
+
+        .heading
         {
+            text-align: center;
+            color: #2e6da4;
+            font-size: 50px;
+            font-weight: bold;
+            font-family: sans-serif ;
+            font-weight: bold;
+        }
+
+        #subheading {
+            color: #2e6da4;
+        }
+
+        .content-info {
+            text-align: center;
+        }
+
+        .field-sep {
+            margin: 5%;
+        }
+
+        .field-sep-one {
+            margin: 3%;
+        }
+
+        .content-info-check {
+            text-align: right;
+            color: #2e6da4;
+        }
+
+        #footer {
             position: fixed;
-            width: 350px;
-            height: 450px;
-            top: 50%;
-            left: 50%;
-            margin-top: -150px;
-            margin-left: -175px;
-            background: #07A8C3;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #336699;
+            color: white;
+            text-align: center;
+        }
+
+
+        /* Responsive layout - makes the three columns stack on top of each other instead of next to each other on smaller screens (600px wide or less) */
+        @media screen and (max-width: 600px) {
+            .column {
+                width: 100%;
+            }
+        }
+
+        #link1 {
+            background-color: #6699FF;
+        }
+
+        #link2 {
+            background-color: #336699;
+            padding: 1;
+            margin-bottom: 2;
+            color: #F2F2F2;
+        }
+
+        a {
+            color: #F2F2F2;
+        }
+
+        .btn1{
+            padding: 5px 50px;
+            background-color: #6699FF;
+            color: #F2F2F2;
+            font-weight: bold;
+        }
+
+        .btn2{
+            padding: 5px;
+            background-color: #FF9933;
+        }
+
+        .col-sm-3 {
+            border: 1px solid #003366;
             padding-top: 10px;
+
         }
-        .loginheading
-        {
-            border-bottom: solid 1px #ECF2F5;
-            padding-left: 18px;
-            padding-bottom: 10px;
-            color: #ffffff;
-            font-size: 20px;
-            font-weight: bold;
-            font-family: sans-serif;
-        }
-        .registercontent
-        {
-            position: fixed;
-            width: 350px;
-            height: 700px;
-            top: 50%;
-            left: 50%;
-            margin-top: -170px;
-            margin-left: -175px;
-            background: #07A8C3;
-            padding-top: 10px;
-        }
-        .emailcontent
-        {
-            position: fixed;
-            width: 350px;
-            height: 150px;
-            top: 50%;
-            left: 50%;
-            margin-top: -170px;
-            margin-left: -175px;
-            background: #07A8C3;
-            padding-top: 10px;
-        }
-        .registerheading
-        {
-            border-bottom: solid 1px #ECF2F5;
-            padding-left: 18px;
-            padding-bottom: 10px;
-            color: #ffffff;
-            font-size: 20px;
-            font-weight: bold;
-            font-family: sans-serif;
-        }
-        label
-        {
-            color: #ffffff;
-            display: inline-block;
-            margin-left: 18px;
-            padding-top: 10px;
-            font-size: 15px;
-        }
-        p
-        {
-            
-            display: inline-block;
-            margin-left: 18px;
-            padding-top: 0px;
-            font-size: 15px;
-        }
-        input[type=text], input[type=password], input[type=email]
-        {
-            font-size: 14px;
-            padding-left: 10px;
-            margin: 10px;
-            margin-top: 12px;
-            margin-left: 18px;
-            width: 300px;
-            height: 35px;
-            border: 1px solid #ccc;
-            border-radius: 2px;
-            box-shadow: inset 0 1.5px 3px rgba(190, 190, 190, .4), 0 0 0 5px #f5f5f5;
-            font-size: 14px;
-        }
-        input[type=checkbox]
-        {
-            margin-left: 18px;
-            margin-top: 30px;
-        }
-        .loginremember
-        {
-            background: #ECF2F5;
-            height: 70px;
-            margin-top: 20px;
-        }
-        .check
-        {
-            font-family: sans-serif;
-            position: relative;
-            top: -2px;
-            margin-left: 2px;
-            padding: 0px;
-            font-size: 12px;
-            color: #321;
-        }
-        .loginbtn
-        {
-            float: right;
-            margin-right: 20px;
-            margin-top: 0px;
-            padding: 6px 20px;
-            font-size: 14px;
-            font-weight: bold;
-            color: #fff;
-            background-color: #07A8C3;
-            background-image: -webkit-gradient(linear, left top, left bottom, from(#07A8C3), to(#6EE4E8));
-            background-image: -moz-linear-gradient(top left 90deg, #07A8C3 0%, #6EE4E8 100%);
-            background-image: linear-gradient(top left 90deg, #07A8C3 0%, #6EE4E8 100%);
-            border-radius: 30px;
-            border: 1px solid #07A8C3;
-            cursor: pointer;
-        }
-        .loginbtn:hover
-        {
-            background-image: -webkit-gradient(linear, left top, left bottom, from(#b6e2ff), to(#6ec2e8));
-            background-image: -moz-linear-gradient(top left 90deg, #b6e2ff 0%, #6ec2e8 100%);
-            background-image: linear-gradient(top left 90deg, #b6e2ff 0%, #6ec2e8 100%);
-        }
-        .registerbtn
-        {
-            float: right;
-            margin-right: 20px;
-            margin-top: 10px;
-            padding: 6px 20px;
-            font-size: 14px;
-            font-weight: bold;
-            color: #fff;
-            background-color: #07A8C3;
-            background-image: -webkit-gradient(linear, left top, left bottom, from(#07A8C3), to(#6EE4E8));
-            background-image: -moz-linear-gradient(top left 90deg, #07A8C3 0%, #6EE4E8 100%);
-            background-image: linear-gradient(top left 90deg, #07A8C3 0%, #6EE4E8 100%);
-            border-radius: 30px;
-            border: 1px solid #07A8C3;
-            cursor: pointer;
-        }
-        .registerbtn:hover
-        {
-            background-image: -webkit-gradient(linear, left top, left bottom, from(#b6e2ff), to(#6ec2e8));
-            background-image: -moz-linear-gradient(top left 90deg, #b6e2ff 0%, #6ec2e8 100%);
-            background-image: linear-gradient(top left 90deg, #b6e2ff 0%, #6ec2e8 100%);
-        }
-        .emailbtn
-        {
-            float: right;
-            margin-right: 20px;
-            margin-top: 10px;
-            padding: 6px 20px;
-            font-size: 14px;
-            font-weight: bold;
-            color: #fff;
-            background-color: #07A8C3;
-            background-image: -webkit-gradient(linear, left top, left bottom, from(#07A8C3), to(#6EE4E8));
-            background-image: -moz-linear-gradient(top left 90deg, #07A8C3 0%, #6EE4E8 100%);
-            background-image: linear-gradient(top left 90deg, #07A8C3 0%, #6EE4E8 100%);
-            border-radius: 30px;
-            border: 1px solid #07A8C3;
-            cursor: pointer;
-        }
-        .emailbtn:hover
-        {
-            background-image: -webkit-gradient(linear, left top, left bottom, from(#b6e2ff), to(#6ec2e8));
-            background-image: -moz-linear-gradient(top left 90deg, #b6e2ff 0%, #6ec2e8 100%);
-            background-image: linear-gradient(top left 90deg, #b6e2ff 0%, #6ec2e8 100%);
+
+        .card-img-top {
+            height: 225px; 
+            width: 100%; 
+            display: block;
         }
     
  
