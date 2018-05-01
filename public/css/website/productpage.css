@@ -3,76 +3,175 @@
 
 
 .product-image img{
-	width: 300px;
-	height:220px;
+	width: 750px;
+	height:400px;
    
-	margin-left: 100px;
+	margin-left: 0px;
 }
 
-.qty input{
-    width: 10%;
-    color: #666 !important;
-    text-align: center;
-    margin-bottom: 10px;
-    font-size:14px;
-	padding: 10px 0px;
+
+.quantity {
+  position: relative;
 }
-.product-d {
-    text-align: center;
-    color:red;
-    font-size: 20px;
-	text-align: center;
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+{
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number]
+{
+  -moz-appearance: textfield;
+}
+
+.quantity input {
+  width: 120px;
+  height: 50px;
+  line-height: 1.65;
+  display: block;
+  padding-left: 50px;
+  border: 1px solid #eee;
+  position: absolute;
+  right:100px;
+  bottom:80px;
+}
+
+.quantity input:focus {
+  outline: 0;
+}
+
+.quantity-nav {
+  float: left;
+  position: relative;
+  height: 42px;
+}
+
+.quantity-button {
+  position: relative;
+  cursor: pointer;
+  border-left: 1px solid #eee;
+  width: 20px;
+  text-align: center;
+  color: #333;
+  font-size: 13px;
+  font-family: "Trebuchet MS", Helvetica, sans-serif !important;
+  line-height: 1.7;
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.quantity-button.quantity-up {
+  position: absolute;
+  height: 50%;
+  top: 0;
+  border-bottom: 1px solid #eee;
+}
+
+.quantity-button.quantity-down {
+  position: absolute;
+  
+  bottom: -1px;
+  height: 50%;
 }
 
 .product-price{
     position: absolute;
-    bottom:100px;
-    right: 300px;
-    color:red;
+    top:100px;
+    right: 70px;
+    color:DodgerBlue;
     padding:5px;
-    font-size: 20px;
+    font-size: 40px;
+	font-weight: bold;
 }
-.product-but {
-     position: center;
+.product-but button {
+     position: absolute;
     border-radius: 8px;
-	bottom: 110px;
-   margin-left: 500px;
+	top: 440px;
+   right: 50px;
+   padding: 15px 80px;
+}
+
+
+
+h6{
+	position: absolute;
+	right:195px;
+	top:200px;
+	font-weight: bold;
+}
+h5{
+	position: absolute;
+	right:157px;
+	top:240px;
+}
+h4{
+	position: absolute;
+	right:15px;
+	top:240px;
+	font-weight: bold;
+}
+p.time{
+	position: absolute;
+	right:157px;
+	top:280px;
+	color:Gray;
+}
+h6.qua{
+	position: absolute;
+	right:253px;
+	top:330px;
+	font-weight: bold;
+}
+
+h4.des{
+	 font-weight: bold;
+	 left:10px;
+	 top:500px;
+}
+.box{
 	
-}
-
-
-.nav ul {
-    list-style-type: none;
-    margin: 0 auto;
-    padding: 0;
-	overflow: hidden;
-    bottom: 40px;
-    position: absolute;
-	width: 100%;
+    background-color: lightgrey;
 
 }
-
-.nav li {
-    float:left;
-
+h4.rev{
+	left:10px;
+	top:620px;
 }
-.nav a {
-      display: block;
-    color: black;
-    text-align: center;
-    padding: 6px 8px;
-    text-decoration: none;
-	word-spacing: 5px;
+div.r1 {
+    width: 1100px;
+    padding: 25px;
+    box-sizing: border-box;
+    background-color: lightgrey;
+}
+.r1 p.name{
+    font-weight: bold;
 	font-size: 20px;
 }
-.nav li a:hover:not(.active){
-    background-color: #999;
-}
-.active {
-    background-color: #999;
-}
 
-.tab-pane p{
-	 margin-left: 0px;
-	 margin-bottom: 0px;
+.r1 p.date{
+	font-size: 17px;
+	color:grey;
+	margin-left: 120px;
+}
+div.r2 {
+    width: 1100px;
+    padding: 25px;
+    box-sizing: border-box;
+    background-color: lightgrey;
+}
+.r2 p.name2{
+    font-weight: bold;
+	font-size: 20px;
+}
+.r2 p.date2{
+	font-size: 17px;
+	color:grey;
+	margin-left: 120px;
 }
