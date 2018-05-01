@@ -22,7 +22,7 @@
 	<br/>
 	<br/>
 <h2><strong>{{$product->product_name}}</strong></h2>
-
+   <div class="box">
 	<div class="product-image" name ="img" >
 	@foreach ($product->images as $img)
 	        <img class="mySlides" src="{{$img->url}}">
@@ -31,9 +31,9 @@
 	</div>
 
               
-<div class="box">
 
-         
+
+     
 		
             <p class="product-price">AU: $ {{ $product->price }}</p>
         
@@ -57,7 +57,7 @@
             
 	</div>
 	</div>
-	
+
 	
 	<br/>
 	

@@ -120,7 +120,7 @@ h5{
 }
 h4{
 	position: absolute;
-	right:15px;
+	right:30px;
 	top:280px;
 	font-weight: bold;
 }
@@ -142,11 +142,7 @@ h4.des{
 	 left:10px;
 	 top:570px;
 }
-.box{
-	
-    background-color: lightgrey;
 
-}
 h4.rev{
 	left:10px;
 	top:665px;
@@ -189,4 +185,9 @@ div.r2 {
 i.material-icons {
 	color:gold;
 	
+}
+.box{
+	width:auto;
+    margin: auto;
+	background-color:lightgrey;
 }
