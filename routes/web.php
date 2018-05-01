@@ -27,6 +27,7 @@ Route::group(['as'=>'website.'], function() {
 		Route::post('/login', ['as'=>'login', 'uses'=>'Auth\LoginController@login']);
 		Route::post('/register', ['as'=>'register','uses'=>'Auth\RegisterController@register']);
 		Route::post('/password/reset', ['as'=>'reset-password', 'uses'=>'Auth\ForgotPasswordController@sendResetLinkEmail']);	
+
 	});
 });
 
@@ -48,5 +49,12 @@ Route::group(['prefix'=>'cart','as'=>'cart.'], function() {
 Route::group(['prefix'=>'checkout','as'=>'checkout.'], function() {
 	Route::group(['as'=>'get.'], function(){
 		Route::get('delivery', ['as'=>'delivery','uses'=>'CheckoutController@getDeliveryOption']);
+		Route::get('add/address', ['as'=>'add.address','uses'=>'CheckoutController@getAddAddress']);
+		Route::get('payment',['as'=>'payment', 'uses'=>'CheckoutController@getPayment']);
+	});
+
+	Route::group(['as'=>'post.'], function() {
+		Route::post('/delivery',['as'=>'delivery', 'uses'=>'CheckoutController@postDeliveryOption']);
+		Route::post('add/address', ['as'=>'add.address','uses'=>'CheckoutController@postAddAddress']);
 	});
 });
