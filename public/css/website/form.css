@@ -121,32 +121,7 @@
             }
         }
 
-        #link1 {
-            background-color: #6699FF;
-        }
-
-        #link2 {
-            background-color: #336699;
-            padding: 1;
-            margin-bottom: 2;
-            color: #F2F2F2;
-        }
-
-        a {
-            color: #F2F2F2;
-        }
-
-        .btn1{
-            padding: 5px 50px;
-            background-color: #6699FF;
-            color: #F2F2F2;
-            font-weight: bold;
-        }
-
-        .btn2{
-            padding: 5px;
-            background-color: #FF9933;
-        }
+        
 
         .col-sm-3 {
             border: 1px solid #003366;

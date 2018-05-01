@@ -1,5 +1,9 @@
 @extends('layout')
 
+@section('css')
+  {!! Html::style(asset('css/website/product_listing.css')) !!}
+@endsection
+
 @section('content')
 @foreach ($products as $product)
 
@@ -9,7 +13,7 @@
 		<div class="row">
 			<div class="col-sm-3">
               <div class="card mb-4 box-shadow">
-                <td>{{$product->images}}</td>
+                <td><img src="{{$product->images[0]->url}}"></td>
                 <div class="card-body">
                                     
                   <br><strong class="card-text">Product Name</strong></br>
@@ -17,7 +21,7 @@
                   <br><strong class="card-text">Description</strong></br>
                   <td>{{$product->product_description}}</td>
 
-                  <strong class="card-text">Price: </strong>
+                  <strong class="card-text">Price: $</strong>
                   <td>{{$product->price}}</td>
                   <br><br>
                   
