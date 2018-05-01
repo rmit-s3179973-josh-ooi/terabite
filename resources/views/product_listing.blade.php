@@ -76,12 +76,9 @@
                 <td><img class="card-img" src="{{$product->images[0]->url}}"></td>
                 <div class="card-body">
                                     
-                  <br><strong class="card-text">Product Name</strong></br>
-                   {{$product->product_name}}                                 
-                  <br><strong class="card-text">Description</strong></br>
-                  <td>{{$product->product_description}}</td>
-
-                  <strong class="card-text">Price: $</strong>
+                  <br>
+                  <td>{{$product->product_name}}</td>                              
+                  <br><strong class="card-text">Price: $</strong>
                   <td>{{$product->price}}</td>
                   <br><br>
                   
