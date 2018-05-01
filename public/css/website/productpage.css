@@ -32,10 +32,11 @@ input[type=number]
   line-height: 1.65;
   display: block;
   padding-left: 50px;
-  border: 1px solid #eee;
+  border: 1px solid black;
   position: absolute;
   right:100px;
-  bottom:80px;
+  bottom:115px;
+  
 }
 
 .quantity input:focus {
@@ -83,7 +84,7 @@ input[type=number]
 
 .product-price{
     position: absolute;
-    top:100px;
+    top:150px;
     right: 70px;
     color:DodgerBlue;
     padding:5px;
@@ -93,47 +94,53 @@ input[type=number]
 .product-but button {
      position: absolute;
     border-radius: 8px;
-	top: 440px;
+	top: 500px;
    right: 50px;
    padding: 15px 80px;
 }
+.but2 button {
+     position: absolute;
 
+	top: 1125px;
+   left: 440px;
+   padding: 12px 70px;
+}
 
 
 h6{
 	position: absolute;
 	right:195px;
-	top:200px;
+	top:240px;
 	font-weight: bold;
 }
 h5{
 	position: absolute;
 	right:157px;
-	top:240px;
+	top:280px;
 }
 h4{
 	position: absolute;
 	right:15px;
-	top:240px;
+	top:280px;
 	font-weight: bold;
 }
 p.time{
 	position: absolute;
 	right:157px;
-	top:280px;
+	top:320px;
 	color:Gray;
 }
 h6.qua{
 	position: absolute;
 	right:253px;
-	top:330px;
+	top:370px;
 	font-weight: bold;
 }
 
 h4.des{
 	 font-weight: bold;
 	 left:10px;
-	 top:500px;
+	 top:570px;
 }
 .box{
 	
@@ -142,7 +149,7 @@ h4.des{
 }
 h4.rev{
 	left:10px;
-	top:620px;
+	top:665px;
 }
 div.r1 {
     width: 1100px;
@@ -158,7 +165,8 @@ div.r1 {
 .r1 p.date{
 	font-size: 17px;
 	color:grey;
-	margin-left: 120px;
+	margin-left: 150px;
+
 }
 div.r2 {
     width: 1100px;
@@ -173,5 +181,12 @@ div.r2 {
 .r2 p.date2{
 	font-size: 17px;
 	color:grey;
-	margin-left: 120px;
+	margin-left: 150px;
+}
+.nowrap {
+  white-space: nowrap ;
+}
+i.material-icons {
+	color:gold;
+	
 }
