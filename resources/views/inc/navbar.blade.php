@@ -1,12 +1,12 @@
 
 @section('css')
-  {!! Html::style(asset('css/website/form.css')) !!}
+  {!! Html::style(asset('css/website/nav.css')) !!}
 @endsection
 @section('content')
 
 <nav id="link1" class="navbar navbar-expand-lg navbar-light">
     <a class="navbar-brand" href="">
-      <img src="" width="30" height="30" class="d-inline-block align-top" alt="">Terabite
+      <img src="" width="30" height="30" class="d-inline-block align-top" alt="">Terabite    
     </a>
 
     <div class="col-lg-6">
