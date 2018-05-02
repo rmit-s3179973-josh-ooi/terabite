@@ -50,11 +50,13 @@
 		
 		
 	<div class = "quantity">
-	
+	<div id="app">
 	 <button class="inc" @click="{counter > 0 ? counter -= 1 : 0">-</button>
-  <input type="number" min="1" max="50" step="1" value="1">
-   <button class="inc" @click="{counter += 1">+</button>
+	 
+ <input type="number" min="1" max="50" step="1" value="1">
   
+   <button class="inc" @click="{counter += 1">+</button>
+  </div>
 </div>
    
 

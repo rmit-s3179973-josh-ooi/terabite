@@ -1,7 +1,4 @@
 
-
-
-
 .product-image img{
 	width: 750px;
 	height:400px;
@@ -21,7 +18,13 @@
   text-transform: uppercase;
  letter-spacing: -0.3em;
   font-size: 25px;
+ 
+  
 }
+.quantity input {
+  text-align: center;
+}
+
 
 button {
 	padding : 5px 18px;
@@ -29,6 +32,7 @@ button {
 	border-radius: 0px;
 	margin:0 auto;
 	 color:#333333;
+	 
 }
 
 
