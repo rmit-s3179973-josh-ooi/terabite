@@ -6,6 +6,8 @@
 @endsection
 
 @section('js')
+{!! Html::script(asset('/js/counter.js')) !!}
+{!! Html::script(asset('/js/slides.js')) !!}
 
 @endsection
 
@@ -25,12 +27,14 @@
    <div class="box">
 	<div class="product-image" name ="img" >
 	@foreach ($product->images as $img)
-	        <img class="mySlides" src="{{$img->url}}">
+	        <img id="Slides" src="{{$img->url}}">
+			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
 	@endforeach
 	
 	</div>
 
-              
+           
 
 
      
@@ -46,7 +50,11 @@
 		
 		
 	<div class = "quantity">
+	
+	 <button class="inc" @click="{counter > 0 ? counter -= 1 : 0">-</button>
   <input type="number" min="1" max="50" step="1" value="1">
+   <button class="inc" @click="{counter += 1">+</button>
+  
 </div>
    
 
