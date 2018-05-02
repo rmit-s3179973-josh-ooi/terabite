@@ -1,3 +1,6 @@
+@section('css')
+    {!! Html::style(asset('css/website/nav.css')) !!}
+@endsection
 <footer class="page-footer position-static font-small pt-4 mt-4" id="footer">
 
     <!--Footer Links-->
@@ -93,7 +96,7 @@
 
     <!--Copyright-->
     <div class="footer-copyright py-3 text-center" >
-        <p><strong><a href="" style="color: #F2F2F2">Privacy Policy</a> &nbsp; &nbsp; &nbsp; <a href="" style="color: #F2F2F2">Terms and Conditions</a></strong> &nbsp; &nbsp; &nbsp;   copyright 2018 &copy; Terabite</p>
+        <p><strong><a href="" style="color: #F2F2F2">Privacy Policy</a> &nbsp; &nbsp; &nbsp; <a href="" style="color: #F2F2F2">Terms and Conditions</a></strong> &nbsp; &nbsp; &nbsp;   2018 Copyrights Terabite.com.au</p>
     </div>
     <!--/.Copyright-->
 

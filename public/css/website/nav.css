@@ -1,6 +1,8 @@
 
 #link1 {
             background-color: #6699FF;
+            color: #F2F2F2;
+
         }
 
         #link2 {
@@ -24,6 +26,24 @@
         .btn2{
             padding: 5px;
             background-color: #FF9933;
+            color: #F2F2F2;
+
+        }
+
+        .col-sm-3 {
+            border: 1px solid #003366;
+            padding-top: 10px;
+
+        }
+
+        #footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #336699;
+            color: white;
+            text-align: center;
         }
 
         .col-sm-3 {

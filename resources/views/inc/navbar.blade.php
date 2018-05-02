@@ -5,7 +5,7 @@
 @section('content')
 
 <nav id="link1" class="navbar navbar-expand-lg navbar-light">
-    <a class="navbar-brand" href="/resources/views/welcome">
+    <a class="navbar-brand" href="">
       <img src="" width="30" height="30" class="d-inline-block align-top" alt="">Terabite    
     </a>
 

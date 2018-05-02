@@ -42,9 +42,8 @@
 
         #content3 {
             margin: auto;
-            width: 100%;
-            padding-top: 10%;
-            padding-left: 20%;
+            width: 70%;
+           padding: 10%;
             vertical-align: middle;
         }
 
@@ -112,6 +111,10 @@
             color: white;
             text-align: center;
         }
+        .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+            background-color: #336699;
+        }
+
 
 
         /* Responsive layout - makes the three columns stack on top of each other instead of next to each other on smaller screens (600px wide or less) */

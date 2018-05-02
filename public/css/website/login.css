@@ -1,0 +1,132 @@
+.main {
+    margin: auto;
+
+}
+
+
+/* Create three equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 50%;
+    margin: auto;
+    /*padding: 50px;*/
+}
+
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#content1 {
+    margin: auto;
+    padding-top: 5%;
+    vertical-align: middle;
+}
+
+#content2 {
+    margin: auto;
+    vertical-align: middle;
+}
+
+#content3 {
+    margin: auto;
+    width: 100%;
+    vertical-align: middle;
+}
+
+/* Content border */
+
+#border {
+    border: 1px solid #2e6da4;
+    padding: 15px;
+    border-radius: 25px;
+    margin: 0px;
+}
+
+#border-one {
+    margin: auto;
+    padding: 9%;
+    border-radius: 25px;
+
+}
+
+#border-two {
+    border: 1px solid #2e6da4;
+    margin-left: 0px;
+    padding: 0;
+    border-radius: 25px;
+
+}
+
+.heading
+{
+    text-align: center;
+    color: #2e6da4;
+    font-size: 50px;
+    font-weight: 600;
+    @import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+}
+
+#subheading {
+    color: #2e6da4;
+    text-align: center;
+    font-weight: 600;
+    @import url(http://fonts.googleapis.com/css?family=Open+Sans);
+}
+#sub-content {
+    text-align: center;
+    @import url(http://fonts.googleapis.com/css?family=Open+Sans);
+    font-weight: 600;
+}
+
+
+
+.field-sep {
+    margin: 2%;
+}
+
+.field-sep-one {
+    margin: 2%;
+}
+
+.content-info-check {
+    text-align: right;
+    color: #2e6da4;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #336699;
+}
+.content-info-check1 {
+    
+    color: #2e6da4;
+}
+
+.btn-color {
+    color: #336699;
+}
+
+
+
+
+#footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #336699;
+    color: white;
+    text-align: center;
+}
+
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other on smaller screens (600px wide or less) */
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}

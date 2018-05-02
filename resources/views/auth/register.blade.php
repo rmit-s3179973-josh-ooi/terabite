@@ -2,7 +2,8 @@
 
 @section('css')
 
-	{!! Html::style(asset('css/website/form.css')) !!}
+	{!! Html::style(asset('css/website/nav.css')) !!}
+	{!! Html::style(asset('css/website/register.css')) !!}
 
 @endsection
 
@@ -25,10 +26,11 @@
 		<div class="main">
 			<div id="content2">
 
+
 				<div class="column content-info" id="border-one">
 					<div ><h1 id="subheading"><strong>Already Have An Account?</strong></h1>
 						<h6>Log in now to view products tailored for you!</h6></div>
-					<a href="{{ route('website.get.register') }}" class="form-control btn btn-primary">Login Now</a>
+					<a href="{{ route('website.get.login') }}" class="form-control btn btn-primary">Login Now</a>
 				</div>
 
 
@@ -60,6 +62,7 @@
 					</div>
 					{!! Form::close() !!}
 				</div>
+
 
 			</div>
 		</div>

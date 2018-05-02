@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('css')
-	{!! Html::style(asset('css/website/form.css')) !!}
+	{!! Html::style(asset('css/website/nav.css')) !!}
 @endsection
 
 @section('content')
@@ -25,7 +25,7 @@
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                       <button type="button" class="btn1 btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn2 btn-sm btn-outline-secondary">Edit</button>
+                      <button type="button" class="btn2 btn-sm btn-outline-secondary">Cart</button>
                     </div>
                   </div>
                 </div>
