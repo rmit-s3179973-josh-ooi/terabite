@@ -5,7 +5,7 @@
 @section('content')
 
 <nav id="link1" class="navbar navbar-expand-lg navbar-light">
-    <a class="navbar-brand" href="">
+    <a class="navbar-brand" href="{{route('website.get.home')}}">
       <img src="" width="30" height="30" class="d-inline-block align-top" alt="">Terabite    
     </a>
 
@@ -14,7 +14,8 @@
         <div>
           <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
         </div>
-        <input type="text" class="form-control rounded-left" placeholder="Search">
+        <input type="text" class="form-control" placeholder="Search">
+        <span class= "search-gap"><div class="divider">|</div></span>
         <div class="input-group-btn">
           <select aria-label="Categories" class="nav-link dropdown-toggle" size="1" id="navbarDropdownMenuLink">
             <option value="0">All Categories</option>
@@ -61,7 +62,7 @@
     </div>
 </nav>
 
-<div id="link2" class="navbar navbar-expand-lg navbar-light ">
+<div id="link2" class="navbar navbar-expand-lg">
   <ul class="navbar-nav mr-auto order-1">
     <li class="nav-item">
       <a class="nav-link" href="#">Categories</a>
