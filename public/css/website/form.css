@@ -125,5 +125,23 @@
         }
 
         
+<<<<<<< HEAD
  
+=======
+
+        .col-sm-3 {
+            border: 1px solid #003366;
+            padding-top: 10px;
+
+        }
+
+        .card-img-top {
+            height: 225px; 
+            width: 100%; 
+            display: block;
+        }
+    
+
+    
+>>>>>>> b98ec82527a11f15de5a6bb07d51454847a8f531
     
