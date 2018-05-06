@@ -42,12 +42,12 @@ a {
     border: 1px solid #003366;
     padding-top: 10px;
 }
-
+/*
 .form-control {
     border: none;
     border-radius: 35px 0px 0px 35px;
 }
-
+*/ 
 #navbarDropdownMenuLink {
     border: none;
     padding: inherit;

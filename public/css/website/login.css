@@ -22,12 +22,14 @@
 
 #content1 {
     margin: auto;
-    padding-top: 5%;
+    padding-top: 4%;
+    
     vertical-align: middle;
 }
 
 #content2 {
     margin: auto;
+    
     vertical-align: middle;
 }
 

@@ -63,10 +63,9 @@
 		</div>
 	</div>
 
-	{{--</div>--}}
-	{{--</div>--}}
+	
 	</body>
-	</div>
+
 @endsection
 
 @section('footer')
