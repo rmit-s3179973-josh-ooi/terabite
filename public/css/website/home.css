@@ -3,7 +3,7 @@
 }
 
 .col-sm-3 {
-    border: 1px solid #003366;
+    /*border: 1px solid #003366; */
     padding-top: 10px;
 }
 
@@ -19,3 +19,21 @@
     background-color: #FF9933;
     color: #F2F2F2;
 }
+
+.items {
+    max-width: 100%
+}
+
+.row {
+    max-width: 100%;
+}
+
+.card-img-top {
+    /* width: 100%; */
+    /* border-top-left-radius: calc(.25rem - 1px); */
+    /* border-top-right-radius: calc(.25rem - 1px); */
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
