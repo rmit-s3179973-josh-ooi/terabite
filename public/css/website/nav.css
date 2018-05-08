@@ -12,7 +12,7 @@
 }
 
 a {
-    color: #F2F2F2;
+    color: white;
 }
 
 .btn1{
@@ -38,11 +38,14 @@ a {
     text-align: center;
 }
 
+<<<<<<< HEAD
 .col-sm-3 {
     border: 1px solid #003366;
     padding-top: 10px;
 }
 /*
+=======
+>>>>>>> 01e28a15443a73dd1e8275b371a7c5d1cf61b373
 .form-control {
     border: none;
     border-radius: 35px 0px 0px 35px;

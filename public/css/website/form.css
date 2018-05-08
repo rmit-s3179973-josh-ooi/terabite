@@ -102,6 +102,7 @@
             color: #2e6da4;
         }
 
+<<<<<<< HEAD
         #footer {
             position: fixed;
             left: 0;
@@ -116,6 +117,8 @@
         }
 
 
+=======
+>>>>>>> 01e28a15443a73dd1e8275b371a7c5d1cf61b373
 
         /* Responsive layout - makes the three columns stack on top of each other instead of next to each other on smaller screens (600px wide or less) */
         @media screen and (max-width: 600px) {
