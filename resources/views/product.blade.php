@@ -13,6 +13,7 @@
 
 
 @section('content')
+ 
     <br/>
     <p>
 	<span><a href="http://terabite.test/home" >Home</a></span>
@@ -122,8 +123,10 @@ I like this poduct very much and I will buy it much more in the future.
         <button class="btn btn-primary" type="submit">Load more</button>
             
 	</div>
+	<br/>
 <br/>
-<br/>
- 
+ <br/>
 
-@endsection
+
+
+ @endsection
