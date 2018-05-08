@@ -35,38 +35,40 @@
 
 		<div class="sidebar">
 
-   <h6>Brand</h6>
-   <li><input type="checkbox" id="brand1" />
-    Brand One
-   </li>
-   <li><input type="checkbox" id="brand2" /> 
-    Brand Two
-   </li>
-   <li><input type="checkbox" id="brand3" />
-    Brand Three
-  </li>
-  <li><input type="checkbox" id="brand4" /> 
-    Brand Four
-   </li>
-   <li><input type="checkbox" id="brand5" />
-    Brand Five
-  </li>
+     <form class="side-nav" >
+      <h6>Brand</h6>
+      <li><input type="checkbox" id="brand1" />
+       Brand One
+      </li>
+      <li><input type="checkbox" id="brand2" /> 
+       Brand Two
+      </li>
+      <li><input type="checkbox" id="brand3" />
+       Brand Three
+      </li>
+      <li><input type="checkbox" id="brand4" /> 
+      Brand Four
+      </li>
+      <li><input type="checkbox" id="brand5" />
+      Brand Five
+      </li>
 
-  </br>
-</br>
-</br>
-</br>
-</br>
-</br>
+      </br>
+      </br>
+      </br>
+      </br>
+      </br>
+      </br>
 
-  <h6>Rating</h6>
-  <li>★★★★★</li></br>
-  <li>★★★★☆</li></br>
-  <li>★★★☆☆</li></br>
-  <li>★★☆☆☆</li></br>
-  <li>★☆☆☆☆</li></br>
+      <h6>Rating</h6>
+      <li>★★★★★</li></br>
+      <li>★★★★☆</li></br>
+      <li>★★★☆☆</li></br>
+      <li>★★☆☆☆</li></br>
+      <li>★☆☆☆☆</li></br>
 
-</div>
+     </form>
+    </div>
 
 		<div class="row">
       @foreach ($products as $product)
