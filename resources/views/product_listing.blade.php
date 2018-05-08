@@ -2,12 +2,13 @@
 
 @section('css')
   {!! Html::style(asset('css/website/product_listing.css')) !!}
-
-
 @endsection
 
 
 @section('content')
+
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <div class="top-nav">
   <a href="/"> Home </a>
@@ -80,7 +81,7 @@
                                     
                   <br>
                   <td>{{$product->product_name}}</td>                              
-                  <br><strong class="card-text">Price: $</strong>
+                  <br><strong class="card-text">$</strong>
                   <td>{{$product->price}}</td>
                   <br><br>
                   
@@ -89,7 +90,7 @@
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                       <button type="button" class="btn1 btn-sm btn-outline-secondary" >View</button>
-                      <button type="button" class="btn2 btn-sm btn-outline-secondary">Add to cart</button>
+                      <button type="button" class="btn2 btn-sm btn-outline-secondary"><i class ="fa fa-shopping-cart"></i></button>
                     </div>
                   </div>
                 </div>
