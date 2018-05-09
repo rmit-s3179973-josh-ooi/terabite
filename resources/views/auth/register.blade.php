@@ -2,8 +2,12 @@
 
 @section('css')
 
+<<<<<<< HEAD
 	{!! Html::style(asset('css/website/nav.css')) !!}
 	{!! Html::style(asset('css/website/register.css')) !!}
+=======
+	{!! Html::style(asset('css/website/form.css')) !!}
+>>>>>>> 19034a4fbce8bcad27280968de71ce1ed0c78971
 
 @endsection
 
