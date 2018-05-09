@@ -65,7 +65,7 @@
 <div id="link2" class="navbar navbar-expand-lg">
   <ul class="navbar-nav mr-auto order-1">
     <li class="nav-item">
-      <a class="nav-link" href="#">Categories</a>
+      <a class="nav-link" href="products">Categories</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="#">Brands</a>
