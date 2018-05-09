@@ -3,10 +3,11 @@
 @section('css')
 
 {!! Html::style(asset('/css/website/productpage.css')) !!}	
+{!! Html::style(asset('/css/website/jquery.mobile.stepper.css')) !!}
 @endsection
 
 @section('js')
-{!! Html::script(asset('/js/counter.js')) !!}
+{!! Html::script(asset('/js/jquery.mobile.stepper.js')) !!}
 {!! Html::script(asset('/js/slides.js')) !!}
 
 @endsection
@@ -36,14 +37,11 @@
 	</div>
 
            
-
-
-     
 		
             <p class="product-price">AU: $ {{ $product->price }}</p>
         
 		
-		<h6 class="del">Delivery Option:</h6>
+		<h6 class="deli">Delivery Option:</h6>
 		<h5>Standard Delivery</h5>
 		<h4>Free</h4>
 		<p class="time">Get By: 17 Apr - 20 Apr</p>
@@ -57,9 +55,9 @@
  <input type="number" min="1" max="50" step="1" value="1">
   
    <button class="inc" @click="{counter += 1">+</button>
+   
   </div>
 </div>
-   
 
 
 <div class="product-but">        	
@@ -125,7 +123,9 @@ I like this poduct very much and I will buy it much more in the future.
 	</div>
 	<br/>
 <br/>
- <br/>
+ <br/>          
+    
+
 
 
 
