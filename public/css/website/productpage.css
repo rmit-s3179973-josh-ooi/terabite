@@ -63,10 +63,10 @@ button:hover {
    padding: 12px 70px;
 }
 
-h6{
+h6.del{
 	position: absolute;
-	right:195px;
-	top:240px;
+	right:210px;
+	top:250px;
 	font-weight: bold;
 }
 h5{

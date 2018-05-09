@@ -43,7 +43,7 @@
             <p class="product-price">AU: $ {{ $product->price }}</p>
         
 		
-		<h6>Delivery Option:</h6>
+		<h6 class="del">Delivery Option:</h6>
 		<h5>Standard Delivery</h5>
 		<h4>Free</h4>
 		<p class="time">Get By: 17 Apr - 20 Apr</p>
