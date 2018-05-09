@@ -58,15 +58,15 @@ button:hover {
 }
 .but2 button {
      position: absolute;
-	top: 1125px;
+	top: 1170px;
    left: 440px;
    padding: 12px 70px;
 }
 
-h6{
+h6.deli{
 	position: absolute;
-	right:195px;
-	top:240px;
+	right:210px;
+	top:250px;
 	font-weight: bold;
 }
 h5{
@@ -103,6 +103,18 @@ h4.rev{
 	left:10px;
 	top:665px;
 }
+h2.star{
+	color:gold;
+}
+h1.star{
+	position: absolute;
+	right:80px;
+	top:440px;
+	color:gold;
+	font-size:48px;
+}
+
+
 div.r1 {
     width: 1100px;
     padding: 25px;
@@ -138,10 +150,7 @@ div.r2 {
 .nowrap {
   white-space: nowrap ;
 }
-i.material-icons {
-	color:gold;
-	
-}
+
 .box{
 	width:auto;
     margin: auto;
