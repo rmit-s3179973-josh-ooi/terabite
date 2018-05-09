@@ -1,86 +1,44 @@
 
-
-
-
 .product-image img{
 	width: 750px;
 	height:400px;
    
 	margin-left: 0px;
 }
-
+.product-image a{
+	margin-right: 100px
+	float: left;
+}
 
 .quantity {
-  position: relative;
+	position: absolute;
+    right:70px;
+	top:400px;
+	justify-content: center;
+  text-transform: uppercase;
+ letter-spacing: -0.3em;
+  font-size: 25px;
+ 
+  
 }
-
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button
-{
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-input[type=number]
-{
-  -moz-appearance: textfield;
-}
-
 .quantity input {
-  width: 120px;
-  height: 50px;
-  line-height: 1.65;
-  display: block;
-  padding-left: 50px;
-  border: 1px solid black;
-  position: absolute;
-  right:100px;
-  bottom:115px;
-  
-}
-
-.quantity input:focus {
-  outline: 0;
-}
-
-.quantity-nav {
-  float: left;
-  position: relative;
-  height: 42px;
-}
-
-.quantity-button {
-  position: relative;
-  cursor: pointer;
-  border-left: 1px solid #eee;
-  width: 20px;
   text-align: center;
-  color: #333;
-  font-size: 13px;
-  font-family: "Trebuchet MS", Helvetica, sans-serif !important;
-  line-height: 1.7;
-  -webkit-transform: translateX(-100%);
-  transform: translateX(-100%);
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
 }
 
-.quantity-button.quantity-up {
-  position: absolute;
-  height: 50%;
-  top: 0;
-  border-bottom: 1px solid #eee;
+
+button {
+	padding : 5px 18px;
+	font-size: 22px;
+	border-radius: 0px;
+	margin:0 auto;
+	 color:#333333;
+	 
 }
 
-.quantity-button.quantity-down {
-  position: absolute;
-  
-  bottom: -1px;
-  height: 50%;
-}
+
+button:hover {
+		background-color: # F2F2F2 ;
+	}
 
 .product-price{
     position: absolute;
@@ -100,17 +58,15 @@ input[type=number]
 }
 .but2 button {
      position: absolute;
-
 	top: 1125px;
    left: 440px;
    padding: 12px 70px;
 }
 
-
-h6{
+h6.del{
 	position: absolute;
-	right:195px;
-	top:240px;
+	right:210px;
+	top:250px;
 	font-weight: bold;
 }
 h5{
@@ -151,7 +107,7 @@ div.r1 {
     width: 1100px;
     padding: 25px;
     box-sizing: border-box;
-    background-color: lightgrey;
+    background-color:  #F2F2F2;
 }
 .r1 p.name{
     font-weight: bold;
@@ -168,7 +124,7 @@ div.r2 {
     width: 1100px;
     padding: 25px;
     box-sizing: border-box;
-    background-color: lightgrey;
+    background-color:  #F2F2F2;
 }
 .r2 p.name2{
     font-weight: bold;
@@ -189,5 +145,51 @@ i.material-icons {
 .box{
 	width:auto;
     margin: auto;
-	background-color:lightgrey;
+	background-color: #F2F2F2;
+}
+
+
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: auto;
+  position: relative;
+  margin: auto;
+  
+}
+
+/* Hide the images by default */
+.Slides {
+    display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  
+  position: absolute;
+  top: 30%;
+
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+
+  font-weight: normal;
+  font-size: 35px;
+  background-color:white;
+  border-radius: 0 1px 1px 0;
+  right:1075px;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 375px;
+  border-radius: 1px 0 0 1px;
+  background-color:white;
+
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: grey;
+ color:  #F2F2F2;
 }

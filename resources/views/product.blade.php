@@ -6,11 +6,14 @@
 @endsection
 
 @section('js')
+{!! Html::script(asset('/js/counter.js')) !!}
+{!! Html::script(asset('/js/slides.js')) !!}
 
 @endsection
 
 
 @section('content')
+ 
     <br/>
     <p>
 	<span><a href="http://terabite.test/home" >Home</a></span>
@@ -25,12 +28,14 @@
    <div class="box">
 	<div class="product-image" name ="img" >
 	@foreach ($product->images as $img)
-	        <img class="mySlides" src="{{$img->url}}">
+	        <img id="Slides" src="{{$img->url}}">
+			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
 	@endforeach
 	
 	</div>
 
-              
+           
 
 
      
@@ -38,7 +43,7 @@
             <p class="product-price">AU: $ {{ $product->price }}</p>
         
 		
-		<h6>Delivery Option:</h6>
+		<h6 class="del">Delivery Option:</h6>
 		<h5>Standard Delivery</h5>
 		<h4>Free</h4>
 		<p class="time">Get By: 17 Apr - 20 Apr</p>
@@ -46,7 +51,13 @@
 		
 		
 	<div class = "quantity">
-  <input type="number" min="1" max="50" step="1" value="1">
+	<div id="app">
+	 <button class="inc" @click="{counter > 0 ? counter -= 1 : 0">-</button>
+	 
+ <input type="number" min="1" max="50" step="1" value="1">
+  
+   <button class="inc" @click="{counter += 1">+</button>
+  </div>
 </div>
    
 
@@ -112,8 +123,10 @@ I like this poduct very much and I will buy it much more in the future.
         <button class="btn btn-primary" type="submit">Load more</button>
             
 	</div>
+	<br/>
 <br/>
-<br/>
- 
+ <br/>
 
-@endsection
+
+
+ @endsection

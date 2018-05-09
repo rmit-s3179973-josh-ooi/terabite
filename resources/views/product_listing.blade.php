@@ -2,12 +2,13 @@
 
 @section('css')
   {!! Html::style(asset('css/website/product_listing.css')) !!}
-
-
 @endsection
 
 
 @section('content')
+
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <div class="top-nav">
   <a href="/"> Home </a>
@@ -35,38 +36,40 @@
 
 		<div class="sidebar">
 
-   <h6>Brand</h6>
-   <li><input type="checkbox" id="brand1" />
-    Brand One
-   </li>
-   <li><input type="checkbox" id="brand2" /> 
-    Brand Two
-   </li>
-   <li><input type="checkbox" id="brand3" />
-    Brand Three
-  </li>
-  <li><input type="checkbox" id="brand4" /> 
-    Brand Four
-   </li>
-   <li><input type="checkbox" id="brand5" />
-    Brand Five
-  </li>
+     <form class="side-nav" >
+      <h6>Brand</h6>
+      <li><input type="checkbox" id="brand1" />
+       Brand One
+      </li>
+      <li><input type="checkbox" id="brand2" /> 
+       Brand Two
+      </li>
+      <li><input type="checkbox" id="brand3" />
+       Brand Three
+      </li>
+      <li><input type="checkbox" id="brand4" /> 
+      Brand Four
+      </li>
+      <li><input type="checkbox" id="brand5" />
+      Brand Five
+      </li>
 
-  </br>
-</br>
-</br>
-</br>
-</br>
-</br>
+      </br>
+      </br>
+      </br>
+      </br>
+      </br>
+      </br>
 
-  <h6>Rating</h6>
-  <li>★★★★★</li></br>
-  <li>★★★★☆</li></br>
-  <li>★★★☆☆</li></br>
-  <li>★★☆☆☆</li></br>
-  <li>★☆☆☆☆</li></br>
+      <h6>Rating</h6>
+      <li>★★★★★</li></br>
+      <li>★★★★☆</li></br>
+      <li>★★★☆☆</li></br>
+      <li>★★☆☆☆</li></br>
+      <li>★☆☆☆☆</li></br>
 
-</div>
+     </form>
+    </div>
 
 		<div class="row">
       @foreach ($products as $product)
@@ -76,12 +79,9 @@
                 <td><img class="card-img" src="{{$product->images[0]->url}}"></td>
                 <div class="card-body">
                                     
-                  <br><strong class="card-text">Product Name</strong></br>
-                   {{$product->product_name}}                                 
-                  <br><strong class="card-text">Description</strong></br>
-                  <td>{{$product->product_description}}</td>
-
-                  <strong class="card-text">Price: $</strong>
+                  <br>
+                  <td>{{$product->product_name}}</td>                              
+                  <br><strong class="card-text">$</strong>
                   <td>{{$product->price}}</td>
                   <br><br>
                   
@@ -90,7 +90,7 @@
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                       <button type="button" class="btn1 btn-sm btn-outline-secondary" >View</button>
-                      <button type="button" class="btn2 btn-sm btn-outline-secondary">Add to cart</button>
+                      <button type="button" class="btn2 btn-sm btn-outline-secondary"><i class ="fa fa-shopping-cart"></i></button>
                     </div>
                   </div>
                 </div>
@@ -98,6 +98,7 @@
             </div>
 
 @endforeach
+</div>
 
 
 @endsection
