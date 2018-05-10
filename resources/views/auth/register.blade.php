@@ -2,7 +2,7 @@
 
 @section('css')
 
-<<<<<<< HEAD
+
 	{!! Html::style(asset('css/website/nav.css')) !!}
 	{!! Html::style(asset('css/website/register.css')) !!}
 
