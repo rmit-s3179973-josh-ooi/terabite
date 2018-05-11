@@ -3,6 +3,7 @@
 @section('css')
 
 {!! Html::style(asset('css/website/form.css')) !!}
+{!! Html::style(asset('css/website/nav.css')) !!}
 
 @endsection
 

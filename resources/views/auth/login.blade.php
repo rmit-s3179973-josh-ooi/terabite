@@ -1,7 +1,8 @@
 @extends('layout')
 
 @section('css')
-	{!! Html::style(asset('css/website/form.css')) !!}
+	{!! Html::style(asset('css/website/nav.css')) !!}
+	{!! Html::style(asset('css/website/login.css')) !!}
 @endsection
 @section('content')
 
@@ -43,10 +44,10 @@
 						   for="chbRemember">Remember me</label>
 				</div>
 				<div class="group content-info-check">
-					<p><a href="{{ route('website.get.reset-password')}}">Forgot password?</a></p>
+					<p><a class="content-info-check1" href="{{ route('website.get.reset-password')}}">Forgot password?</a></p>
 				</div>
-				<div class="group content-info field-sep">
-					{!! Form::submit('Submit',['class'=>'form-control btn btn-primary']) !!}
+				<div class="group  field-sep">
+					{!! Form::submit('LOGIN',['class'=>'form-control btn btn-primary','id'=>'sub-content']) !!}
 				</div>
 				{!! Form::close() !!}
 			</div>
@@ -54,18 +55,17 @@
 			<div id="content2">
 				<div class="column content-info" id="border-one">
 					<div><h1 id="subheading"><strong>Don't Have An Account yet?</strong></h1>
-						<h6>Register now to enjoy the best deals on the internet.</h6></div>
-					<a  href="{{ route('website.get.register') }}" class="form-control btn btn-primary">Sign Up Now</a>
+						<h6 id="sub-content">Register now to enjoy the best deals on the internet.</h6></div>
+					<a  href="{{ route('website.get.register') }}" class="form-control btn btn-primary id="sub-content">Sign Up Now</a>
 				</div>
 			</div>
 
 		</div>
 	</div>
 
-	{{--</div>--}}
-	{{--</div>--}}
+	
 	</body>
-	</div>
+
 @endsection
 
 @section('footer')
