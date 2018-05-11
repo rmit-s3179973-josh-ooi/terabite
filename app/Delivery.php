@@ -13,10 +13,5 @@ class Delivery extends Model
     public function getCostAttribute($value)
     {
     	return number_format($value/100, 2, '.', ' ');
-    }
-
-    public function getIdAttribute($value)
-    {
-    	return Hashids::encode($value);
-    }
+    }    
 }

@@ -48,6 +48,13 @@
 		@endforeach
 		</table>
 	</div>
+	<div class="column" >
+		<label></label>
+		{!! Form::text('payment.number', null,['class'=>'form-control name']) !!}
+		{!! Form::text('payment.name', null, ['class'=>'form-control']) !!}
+		{!! Form::text('payment.expiry', null, ['class'=>'form-control']) !!}		
+		{!! Form::password('payment.cvc', null, ['class'=>'form-control']) !!}
+	</div>
 	{!! Form::submit('Submit',['class'=>'form-control btn btn-primary']) !!}
 	{!! Form::close() !!}
 @endsection

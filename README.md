@@ -49,3 +49,29 @@ the local server IP address is 192.168.10.10. you can use the IP address to acce
 ### Laravel's Artisan Commands
 
 
+## Website Routes
+
+| Description 				| Url 					| Route Name 						| Http Type |
+| ---------- 				| -------------------- 	| ----------------------------- 	| --------- |
+| Home page 				| `/` 					| website.get.home 					| GET 		|
+| user register 			| `/register` 			| website.get.register 				| GET 		|
+| user login 				| `/login`				| website.get.login 				| GET 		|
+| user logout				| `/logout`				| website.get.logout 				| GET 		|
+| reset password			| `/password/reset`		| website.get.reset.password 		| GET 		|
+| product page				| `/product/{id}`		| website.get.product 				| GET 		|
+| verification code link 	| `/activate/{code}` 	| website.get.verification-code 	| GET 		|
+| account page				| `/account`			| account.get.home 					| GET 		|
+| cart page					| `/cart`				| cart.get.view 					| GET 		|
+| checkout page 			| `/checkout` 			| checkout.get.view 				| GET 		|
+| add address @ checkout 	| `/checkout/add/address` 	| checkout.get.add.address 		| GET 		|
+| login form submit 		| `/login` 					| website.post.login 			| POST 		|
+| register form submit 		| `/register` 				| website.post.register 		| POST 		|
+| reset password form 		| `/password/reset` 		| website.post.reset.password 	| POST 		|
+| checkout submit 			| `/checkout` 				| checkout.post.checkout 		| POST 		|
+| submit address @ checkout | `/checkout/add/address` 	| checkout.post.add.address 	| POST 		|
+| remove cart item 			| `/cart/remove/{id}` 		| cart.post.remove 				| POST 		|
+| add item to cart 			| `/cart/add/{id}` 			| cart.post.add 				| POST 		|
+
+
+
+

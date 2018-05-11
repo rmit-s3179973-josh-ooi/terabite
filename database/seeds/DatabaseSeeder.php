@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
             CategoryTableSeeder::class,
             ProductTableSeeder::class, 
             DeliveryOptionSeeder::class,
+            AdminUserSeeder::class,
         ]);
         
     }
@@ -36,5 +37,18 @@ Class DeliveryOptionSeeder extends Seeder
         ]);
 
 
+    }
+}
+
+Class AdminUserSeeder extends Seeder
+{
+    public function run()
+    {
+        DB::table('users')->insert([
+            'name' =>'Josh',
+            'email' =>'josh.ronald.ooi@gmail.com',
+            'password' =>Hash::make("qweasd"),
+            'activated'=>true,
+        ]);
     }
 }

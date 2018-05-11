@@ -18,12 +18,16 @@ class CreateDeliveryTables extends Migration
             $table->string('delivery_type');
             $table->integer('cost')->unsigned();
             $table->boolean('is_flat')->default(false);
+            $table->timestamps();
         });
 
         Schema::create('orders', function(Blueprint $table){
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->integer('delivery_option_id')->unsigned();
+            $table->integer('total')->unsigned();
+            $table->integer('qty')->unsigned();
+            $table->timestamps();
 
             $table->foreign('user_id')
                     ->references('id')
@@ -39,7 +43,9 @@ class CreateDeliveryTables extends Migration
         Schema::create('order_product', function(Blueprint $table) {
             $table->integer('order_id')->unsigned();
             $table->integer('product_id')->unsigned();
-
+            $table->integer('qty')->unsigned();
+            $table->integer('price')->unsigned();
+            
             $table->foreign('order_id')
                     ->references('id')
                     ->on('orders')

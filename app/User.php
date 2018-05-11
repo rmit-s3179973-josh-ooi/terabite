@@ -48,6 +48,11 @@ class User extends Authenticatable
         return $this->belongsToMany(Address::class);
     }
 
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
+
     public function getAddressAtributes()
     {
         return $this->address()->all();
