@@ -13,7 +13,7 @@ trait SendVerificationCode
 
 	protected function SendVerificationCode($user)
 	{			
-		$link = route('website-verification-code',['code'=>Hashids::encode($user->id)]);
+		$link = route('website.get.verification-code',['code'=>Hashids::encode($user->id)]);
 
 		Mail::to($user->email)->send(new AccountVerification($link,$user));
 	}

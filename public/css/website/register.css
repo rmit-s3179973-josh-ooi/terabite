@@ -1,0 +1,125 @@
+.main {
+    margin: auto;
+
+}
+
+
+/* Create three equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 50%;
+    margin: auto;
+    /*padding: 50px;*/
+}
+
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#content1 {
+    margin: auto;
+
+    vertical-align: middle;
+}
+
+#content2 {
+    margin: auto;
+    vertical-align: middle;
+    padding-top: 3%;
+    
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #336699;
+}
+
+#content3 {
+    margin: auto;
+
+    vertical-align: middle;
+}
+
+/* Content border */
+
+#border {
+    border: 1px solid #2e6da4;
+    padding: 20px;
+    border-radius: 25px;
+    margin: 0px;
+}
+
+#border-one {
+    margin-left: 0px;
+    padding: 10%;
+    border-radius: 25px;
+
+}
+
+#border-two {
+    border: 1px solid #2e6da4;
+    margin-left: 0px;
+    padding: 0;
+    border-radius: 25px;
+
+}
+
+.heading
+{
+    text-align: center;
+    color: #2e6da4;
+    font-size: 50px;
+    font-weight: 600;
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+}
+
+#subheading {
+    color: #2e6da4;
+    text-align: center;
+    font-weight: 600;
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+}
+#sub-content {
+    text-align: center;
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+    font-weight: 600;
+}
+
+.content-info {
+    text-align: center;
+}
+
+.field-sep {
+    margin: 2%;
+}
+
+.field-sep-one {
+    margin: 3%;
+}
+
+.content-info-check {
+    text-align: right;
+    color: #2e6da4;
+}
+
+#footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #778899;
+    color: white;
+    text-align: center;
+}
+
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other on smaller screens (600px wide or less) */
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}

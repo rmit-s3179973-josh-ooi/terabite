@@ -1,3 +1,4 @@
+
 #link1 {
     background-color: #6699FF;
     color: #F2F2F2;
@@ -24,8 +25,19 @@ a {
     text-align: center;
 }
 
+<<<<<<< HEAD
 
 
+=======
+<<<<<<< HEAD
+.col-sm-3 {
+    border: 1px solid #003366;
+    padding-top: 10px;
+}
+/*
+=======
+>>>>>>> 01e28a15443a73dd1e8275b371a7c5d1cf61b373
+>>>>>>> 1c29d8af60e4df7fd1451ae56e7befdf3b61dfd0
 .form-control {
     display: block;
     width: 100%;
@@ -39,7 +51,7 @@ a {
     border-radius: .25rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
-
+*/ 
 #navbarDropdownMenuLink {
     border: none;
     padding: inherit;

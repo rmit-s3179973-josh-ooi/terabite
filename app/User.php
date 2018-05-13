@@ -18,6 +18,8 @@ class User extends Authenticatable
         'name', 'email', 'password','activated',
     ];
 
+    protected $appends = ['address'];
+
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -25,6 +27,10 @@ class User extends Authenticatable
      */
     protected $hidden = [
         'password', 'remember_token',
+    ];
+
+    protected $visible = [
+        'id','name', 'email', 'contact_number','address'
     ];
 
     public function categories()
@@ -35,5 +41,20 @@ class User extends Authenticatable
     public function verification()
     {
         return $this->hasOne(VerificationCode::class);
+    }
+
+    public function address()
+    {
+        return $this->belongsToMany(Address::class);
+    }
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
+
+    public function getAddressAtributes()
+    {
+        return $this->address()->all();
     }
 }
