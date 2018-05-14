@@ -44,7 +44,7 @@
 						   for="chbRemember">Remember me</label>
 				</div>
 				<div class="group content-info-check">
-					<p><a class="content-info-check1" href="{{ route('website.get.reset-password')}}">Forgot password?</a></p>
+					<p><a class="content-info-check1" href="{{ route('website.get.reset.password')}}">Forgot password?</a></p>
 				</div>
 				<div class="group  field-sep">
 					{!! Form::submit('LOGIN',['class'=>'form-control btn btn-primary','id'=>'sub-content']) !!}

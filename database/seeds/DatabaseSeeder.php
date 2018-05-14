@@ -52,3 +52,48 @@ Class AdminUserSeeder extends Seeder
         ]);
     }
 }
+
+Class CategorySeeder extends Seeder
+{
+    public function run()
+    {
+        DB::table('categories')->insert([
+            'category_name' => ''
+        ]);
+        DB::table('categories')->insert([
+            'category_name' => ''
+        ]);
+        DB::table('categories')->insert([
+            'category_name' => ''
+        ]);
+        // etc
+    }
+}
+
+Class ProductSeeder extends Seeder
+{
+    public function run()
+    {
+        DB::table('products')->insert([
+            'manufacturer' => '',
+            'product_name' => '',
+            'product_description' => '',
+            'price' => 1000,
+            'category_id' => 1,
+        ]);
+        DB::table('products')->insert([
+            'manufacturer' => '',
+            'product_name' => '',
+            'product_description' => '',
+            'price' => 1000,
+            'category_id' => 1,
+        ]);
+        DB::table('products')->insert([
+            'manufacturer' => '',
+            'product_name' => '',
+            'product_description' => '',
+            'price' => 1000,
+            'category_id' => 1,
+        ]);
+    }
+}
