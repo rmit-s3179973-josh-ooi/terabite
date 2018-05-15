@@ -15,9 +15,9 @@
 
 @section('content')
  
-    <br/>
+    <br>
     <p>
-	<span><a href="http://terabite.test/home" >Home</a></span>
+	<span><a href="http://terabite.test/welcome" >Home</a></span>
 	<span class="nowrap"> > </span>
 	
 	<span>{{$product->category->category_name}}</span>
