@@ -61,7 +61,11 @@
 
 
 <div class="product-but">        	
-                
+          <form action="{{ url('/cart') }}" method="POST" class="side-by-side">
+                    {!! csrf_field() !!}
+                    <input type="hidden" name="id" value="{{ $product->product_id }}">
+                    <input type="hidden" name="name" value="{{ $product->product_name }}">
+                    <input type="hidden" name="price" value="{{ $product->price }}">      
         <button class="btn btn-primary" type="submit">Add to Cart</button>
             
 	</div>
