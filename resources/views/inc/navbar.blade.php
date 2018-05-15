@@ -19,9 +19,9 @@
         <div class="input-group-btn">
           <select aria-label="Categories" class="nav-link dropdown-toggle" size="1" id="navbarDropdownMenuLink">
             <option value="0">All Categories</option>
-            <option value="">Computers &amp; Laptops</option>
-            <option value="">Headphones</option>
-            <option value="">Printers</option>
+            <option value="">Computers &amp; Laptops</option> 
+            <option value="">Headphones</option> 
+            <option value="">Printers</option> 
             <option value="">Speakers</option>
             <option value="">Tvs</option>
             <option value="">Phones</option>
@@ -65,7 +65,7 @@
 <div id="link2" class="navbar navbar-expand-lg">
   <ul class="navbar-nav mr-auto order-1">
     <li class="nav-item">
-      <a class="nav-link" href="products">Categories</a>
+       <a class="nav-link" href="products">Categories</a> 
     </li>
     <li class="nav-item">
       <a class="nav-link" href="#">Brands</a>
