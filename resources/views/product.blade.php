@@ -7,7 +7,7 @@
 @endsection
 
 @section('js')
-{!! Html::script(asset('/js/jquery.mobile.stepper.js')) !!}
+{!! Html::script(asset('/js/counter.js')) !!}
 {!! Html::script(asset('/js/slides.js')) !!}
 
 @endsection
@@ -17,7 +17,7 @@
  
     <br>
     <p>
-	<span><a href="http://terabite.test/welcome" >Home</a></span>
+	<span><a href="http://terabite.test" >Home</a></span>
 	<span class="nowrap"> > </span>
 	
 	<span>{{$product->category->category_name}}</span>
@@ -48,20 +48,22 @@
 		<h6 class="qua">Quantity</h6>
 			
 			
-	<div class = "quantity">
-	<div id="app">
-	 <button class="inc" @click="{counter > 0 ? counter -= 1 : 0">-</button>
-	 
- <input type="number" min="1" max="50" step="1" value="1">
+	<div class ="app">
+	<div id="appw">
+	<table>
+	 <td><button type="button" class="quantity-left-minus btn btn-number"  data-type="minus" data-field="">-</button></td>
+	 <span class="glyphicon glyphicon-minus"></span>
+ <td><input id="quantity" name ="quantity"class="form-control input-number" type="text" min="1" max="50" step="1" value="1"></td>
   
-   <button class="inc" @click="{counter += 1">+</button>
-   
+   <td><button  type="button" class="quantity-right-plus btn btn-number" data-type="plus" data-field="">+</button></td>
+    <span class="glyphicon glyphicon-plus"></span>
+   </table>
   </div>
 </div>
 
 
 <div class="product-but">        	
-          <form action="{{ url('/cart') }}" method="POST" class="side-by-side">
+          <form action="{{ url('http://terabite.test/cart') }}" method="POST" class="side-by-side">
                     {!! csrf_field() !!}
                     <input type="hidden" name="id" value="{{ $product->product_id }}">
                     <input type="hidden" name="name" value="{{ $product->product_name }}">
