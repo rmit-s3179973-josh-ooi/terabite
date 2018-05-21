@@ -9,7 +9,7 @@
 @section('js')
 {!! Html::script(asset('/js/counter.js')) !!}
 {!! Html::script(asset('/js/slides.js')) !!}
-
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 @endsection
 
 
@@ -27,6 +27,7 @@
 	<br/>
 <h2><strong>{{$product->product_name}}</strong></h2>
    <div class="box">
+   
 	<div class="product-image" name ="img" >
 	@foreach ($product->images as $img)
 	        <img id="Slides" src="{{$img->url}}">

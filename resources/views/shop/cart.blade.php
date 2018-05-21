@@ -24,10 +24,10 @@
 <thead>
 	<tr>
 	    <th class="table-image"></th>
-		<th>Product name</th>
-		<th>Quantity</th>
-		<th>Price</th>
-		<th>Total</th>
+		<th class="image">Product name</th>
+		<th class="quantity">Quantity</th>
+		<th class="price">Price</th>
+		<th class="total">Total</th>
 		<th></th>
 	</tr>
 	</thead>
@@ -39,6 +39,13 @@
 		<td>{{$item['item']->price}}</td>
 		<td>{{$item['qty']}}</td>
 		<div><input type="text" name="cart_quantity[]" value="1" size="2" /><input type="hidden" name="products_id[]" value="170662" /><input type="hidden" name="old_qty[]" value="1" /></div>
+		<td class="cart_quantity">
+								<div class="cart_quantity_button">
+									<a class="cart_quantity_up" href=""> + </a>
+									<input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
+									<a class="cart_quantity_down" href=""> - </a>
+								</div>
+							</td>
 		<td>{{$item['price']}}</td>
 		<p>
             <form action="{{ route('laralum_public::shop.cart.remove', ['item' => $item['item']->id]) }}" method="POST">
@@ -59,6 +66,8 @@
 	<td>{{$cart->totalQty}}</td>
 	<td>{{$cart->totalPrice}}</td>
 </tr>
+<a class="btn btn-default update" href="">Update</a>
+<a class="btn btn-default check_out" href="">Check Out</a>
 </table>
 <div><input type="submit" alt="Update shopping cart" title="Update shopping cart" value="Update shopping cart" data-icon="refresh"></div>
 @else
