@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('css')
-	{!! Html::style(asset('css/website/navbar.css')) !!}
+	{!! Html::style(asset('css/website/home.css')) !!}
 @endsection
 
 @section('content')
