@@ -21,13 +21,14 @@ Route::group(['as'=>'website.'], function() {
 		Route::get('/product/{id}', ['as'=>'product', 'uses'=>'ProductController@getProduct']);
 		Route::get('/products', ['as'=>'search', 'uses'=>'ProductController@search']);
 		Route::get('/activate/{code}',['as'=>'verification-code','uses'=>'VerificationController@activate']);
+		Route::get('/product/review/{id}',['as'=>'review','uses'=>'ReviewController@index']);
 	});
 	
 	Route::group(['as'=>'post.'], function() {
 		Route::post('/login', ['as'=>'login', 'uses'=>'Auth\LoginController@login']);
 		Route::post('/register', ['as'=>'register','uses'=>'Auth\RegisterController@register']);
 		Route::post('/password/reset', ['as'=>'reset.password', 'uses'=>'Auth\ForgotPasswordController@sendResetLinkEmail']);	
-
+		Route::post('/product/review/{id}',['as'=>'review','uses'=>'ReviewController@postReview']);
 	});
 });
 

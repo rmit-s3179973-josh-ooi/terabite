@@ -57,4 +57,37 @@ class User extends Authenticatable
     {
         return $this->address()->all();
     }
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
+
+    public function hasPurchaseProduct($id)
+    {
+        $orders = $this->orders()->get();
+
+        foreach($orders as $order)
+        {
+            if($order->hasProduct($id))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public function hasReviewProduct($id)
+    {
+        $review = $this->reviews()->where('product_id',$id)->first();
+        
+        if(is_null($review))
+        {
+            return false;
+        }
+
+        return true;
+
+    }
 }

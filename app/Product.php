@@ -24,4 +24,9 @@ class Product extends Model
     {
     	return $this->belongsToMany(Product::class);
     }
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
 }
