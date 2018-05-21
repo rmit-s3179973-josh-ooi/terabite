@@ -11,6 +11,7 @@ use App\Order;
 use App\Product;
 use App\Http\Helpers\AccountDetails;
 use App\Notifications\SendReceiptNotification;
+use App\Notifications\ReviewProduct;
 
 class CheckoutController extends Controller
 {
@@ -80,8 +81,8 @@ class CheckoutController extends Controller
         }
         
         // send confirmation email
-        $user->notify(new SendReceiptNotification($order));
-        
+        // $user->notify(new SendReceiptNotification($order));
+        $user->notify(new ReviewProduct($order));
         return redirect()->route('checkout.get.complete',['id'=>Hashids::encode($order->id)]);
                             
     }

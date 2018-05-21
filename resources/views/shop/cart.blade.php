@@ -1,5 +1,5 @@
 @extends('layout')
-
+@inject('Hashids','Vinkla\Hashids\Facades\Hashids')
 @section('content')
 <h1>Shopping Cart</h1>
 
@@ -34,7 +34,7 @@
 	<tbody>
 @foreach( $cart->items as $item)
 	<tr>
-	    <td class="table-image"><img src="{{ asset('img/' . $product->image) }}" alt="product" class="img-responsive"></td>
+	    <td class="table-image"><img src="{{ asset('img/' . $item['item']->image) }}" alt="product" class="img-responsive"></td>
 		<td>{{$item['item']->product_name}}</td>
 		<td>{{$item['item']->price}}</td>
 		<td>{{$item['qty']}}</td>
@@ -48,7 +48,7 @@
 							</td>
 		<td>{{$item['price']}}</td>
 		<p>
-            <form action="{{ route('laralum_public::shop.cart.remove', ['item' => $item['item']->id]) }}" method="POST">
+            <form action="{{ route('cart.post.remove', ['item' => $item['item']->id]) }}" method="POST">
                 {{ csrf_field() }}
 				 <input type="hidden" name="_method" value="DELETE">
                  <input type="submit" class="btn btn-danger btn-sm" value="Remove">
@@ -73,4 +73,6 @@
 @else
 <h1>Cart is empty</h1>
 @endif
+
+
 @endsection

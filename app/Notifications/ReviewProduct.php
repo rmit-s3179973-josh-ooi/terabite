@@ -6,12 +6,14 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
+use App\Order;
+use Hashids;
 
-class SendReceipt extends Notification
+class ReviewProduct extends Notification
 {
     use Queueable;
 
-    private $order;
+    protected $order;
     /**
      * Create a new notification instance.
      *
@@ -41,11 +43,7 @@ class SendReceipt extends Notification
      */
     public function toMail($notifiable)
     {
-        $url = url('/account/receipt/'. $this->order->id);
-        return (new MailMessage)
-                    ->line('Click the link below to view your order receipt.')
-                    ->action('Notification Action', $url);
-                    ->line('Thank you for shopping with us!');
+        return (new MailMessage)->markdown('emails.review',['products'=>$this->order->products()->get(), 'user_id'=>$notifiable->id]);
     }
 
     /**

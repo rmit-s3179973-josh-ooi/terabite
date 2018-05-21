@@ -26,6 +26,7 @@ class CreateProductTables extends Migration
             $table->string('product_description');
             $table->integer('category_id')->unsigned()->nullable();
             $table->integer('price')->unsigned();
+            $table->boolean('is_activated')->default(false);
             $table->timestamps();
 
             $table->foreign('category_id')

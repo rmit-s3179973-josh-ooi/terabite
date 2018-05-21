@@ -27,4 +27,19 @@ class Order extends Model
     {
     	return $this->created_at->format('d/m/Y');
     }
+
+    public function hasProduct($id)
+    {
+        $product = $this->products()->get();
+
+        foreach($product as $product)
+        {
+            if($product->id == $id)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
 }
