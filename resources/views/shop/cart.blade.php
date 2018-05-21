@@ -34,14 +34,14 @@
 	<tbody>
 @foreach( $cart->items as $item)
 	<tr>
-	    <td class="table-image"><img src="{{ asset('img/' . $product->image) }}" alt="product" class="img-responsive"></td>
+	    <td class="table-image"><img src="{{ asset('img/' . $item['item']->image) }}" alt="product" class="img-responsive"></td>
 		<td>{{$item['item']->product_name}}</td>
 		<td>{{$item['item']->price}}</td>
 		<td>{{$item['qty']}}</td>
 		<div><input type="text" name="cart_quantity[]" value="1" size="2" /><input type="hidden" name="products_id[]" value="170662" /><input type="hidden" name="old_qty[]" value="1" /></div>
 		<td>{{$item['price']}}</td>
 		<p>
-            <form action="{{ route('laralum_public::shop.cart.remove', ['item' => $item['item']->id]) }}" method="POST">
+            <form action="{{ route('cart.post.remove', ['item' => $item['item']->id]) }}" method="POST">
                 {{ csrf_field() }}
 				 <input type="hidden" name="_method" value="DELETE">
                  <input type="submit" class="btn btn-danger btn-sm" value="Remove">
