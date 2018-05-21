@@ -1,0 +1,14 @@
+.update{
+	position: absolute;
+	right:200px;
+	top:190px;
+}
+.delete{
+	position: absolute;
+	right: 100px;
+}
+.check{
+	position: absolute;
+	right:100px;
+	top:190px;
+}

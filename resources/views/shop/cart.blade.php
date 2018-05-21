@@ -1,4 +1,8 @@
 @extends('layout')
+@section('css')
+
+{!! Html::style(asset('/css/website/cart.css')) !!}	
+@endsection
 @inject('Hashids','Vinkla\Hashids\Facades\Hashids')
 @section('content')
 <h1>Shopping Cart</h1>
@@ -25,51 +29,59 @@
 	<tr>
 	    <th class="table-image"></th>
 		<th class="image">Product name</th>
-		<th class="quantity">Quantity</th>
+		<th></th>
+		<th></th>
 		<th class="price">Price</th>
+		<th></th>
+		<th class="quantity">Quantity</th>
+		
+		<th></th>
 		<th class="total">Total</th>
 		<th></th>
 	</tr>
 	</thead>
 	<tbody>
 @foreach( $cart->items as $item)
+
 	<tr>
-	    <td class="table-image"><img src="{{ asset('img/' . $item['item']->image) }}" alt="product" class="img-responsive"></td>
-		<td>{{$item['item']->product_name}}</td>
-		<td>{{$item['item']->price}}</td>
-		<td>{{$item['qty']}}</td>
-		<div><input type="text" name="cart_quantity[]" value="1" size="2" /><input type="hidden" name="products_id[]" value="170662" /><input type="hidden" name="old_qty[]" value="1" /></div>
-		<td class="cart_quantity">
+	    <th class="table-image"><img src="{{ asset('img/' . $item['item']->image) }}" alt="product" class="img-responsive"></th>
+		
+		<th>{{$item['item']->product_name}}</th>	
+		<th></th>
+		<th class="product">AU${{$item['item']->price}}.00</th>
+		<th></th>
+		<th class="cart_quantity">
 								<div class="cart_quantity_button">
 									<a class="cart_quantity_up" href=""> + </a>
 									<input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
 									<a class="cart_quantity_down" href=""> - </a>
 								</div>
-							</td>
-		<td>{{$item['price']}}</td>
-		<p>
-            <form action="{{ route('cart.post.remove', ['item' => $item['item']->id]) }}" method="POST">
+							</th>
+							<th></th>
+		<th class="product_price">AU${{$item['price']}}.00</th>
+		<th class="delete"><form action="{{ route('cart.post.remove', ['item' => $item['item']->id]) }}" method="POST">
                 {{ csrf_field() }}
 				 <input type="hidden" name="_method" value="DELETE">
                  <input type="submit" class="btn btn-danger btn-sm" value="Remove">
 				 
-            </form>
+            </form></th>
+		<p>
+            
         </p>
 	</tr>
      
 @endforeach
 <tr>
 	<td></td>
-	<td></td>
-  
-  </tr>
-	<td>{{$cart->totalQty}}</td>
-	<td>{{$cart->totalPrice}}</td>
-</tr>
-<a class="btn btn-default update" href="">Update</a>
-<a class="btn btn-default check_out" href="">Check Out</a>
+	
+    <div class="sub">
+	<th >Subtotal: AU${{$cart->totalPrice}}.00</th></div>
+ </tr>
 </table>
-<div><input type="submit" alt="Update shopping cart" title="Update shopping cart" value="Update shopping cart" data-icon="refresh"></div>
+</br>
+<div class="shop"><input type="submit" alt="Continue shopping" title="Continue shopping" value="Continue shopping" data-icon="refresh"></div>
+<div class="update"><input type="submit" alt="Update" title="Update" value="Update" data-icon="refresh"></div>
+<div class="check"><input type="submit" alt="Checkout" title="Checkout" value="Checkout" data-icon="refresh"></div>
 @else
 <h1>Cart is empty</h1>
 @endif
