@@ -9,7 +9,6 @@
 @section('js')
 {!! Html::script(asset('/js/counter.js')) !!}
 {!! Html::script(asset('assets/ext/jquery-slideshow/slider.min.js')) !!}
-
 @endsection
 
 
