@@ -1,0 +1,153 @@
+@import 'default';
+@import '_nav';
+@import '_product_item';
+@import '_crumbs';
+@import '_rating';
+
+.product-container{
+	@include span(1);
+	padding:10px;
+
+	.title-wrap{
+		@include span(1);
+		margin: 10px 0px;
+		.title{
+			@include span(7/10);
+
+			h1{
+				font-family:'roboto';
+				font-weight:bold;
+				color:$black;
+				margin:0;
+			}
+		}
+
+		.filter{
+			@include span(3/10);
+			padding-top:10px;
+			.filter-text{
+				@include span(3/10);
+				line-height:30px;
+				
+			}
+			.dropdown{
+				@include span(7/10);
+				
+				select{
+					@include span(1);
+					background: transparent;
+					border-radius: 2px;
+					height:30px;
+				}
+			}
+		}
+	}
+
+	.product-wrap{
+		@include span(1);
+		margin:20px 0;
+
+		.product-inner-wrap{
+			@include span(1);
+		}
+
+		.sidebar{
+			@include column(2.5/10);
+			
+			ul,li{
+				@span(1);				
+			}
+
+			ul{
+				margin-botoom:20px;
+			}
+
+			.brand-list-item{
+				margin: 3px 0;
+			}
+			.label{
+				font-size:11pt;
+
+
+			}
+
+			.rating-list{
+
+				.label{
+					font-size:15pt;
+
+					span{
+						font-size:11pt;
+					}
+				}
+			}
+
+			.btn-wrap{
+				@include span(1);
+				margin:10px 0;
+			}
+
+			.btn-filter{
+				position: relative;
+				width: 120px;
+				height:35px;
+				text-align: center;
+				@include font-open-sans(bold,$white,12pt);
+				padding:5px;
+				background: $blue;
+			}
+		}
+
+		.product-listing{
+			@include column(7.5/10);
+			position: relative;
+		}
+
+		.pagination-wrap{
+			@include span(1);
+			position: relative;
+			.pagination {
+				position: relative;
+				display: block;
+				margin:0 auto;
+				text-align: center;
+
+				.page-item{
+					$length:40px;
+					height:$length;
+					width:$length;
+					display:inline-block;
+					margin:0 auto;
+					line-height:$length - 3;
+					border:1px solid $blue;
+					@include font-open-sans(normal, $blue, 14pt);
+
+					&:hover{
+						background: $light-blue;
+						@include font-open-sans(normal, $white, 14pt);
+					}
+
+					&.active, &:active:hover{
+						background: $blue;
+						@include font-open-sans(normal, $white, 14pt);
+					}
+
+
+					&.disabled:hover{
+						border:1px solid $blue;
+						background: transparent;
+						@include font-open-sans(normal, $blue, 14pt);
+					}
+					
+
+					a{
+						display: block;
+						width: 100%;
+						height: 100%;
+						text-decoration: none;
+					}
+				}
+			}
+		}
+	}
+}

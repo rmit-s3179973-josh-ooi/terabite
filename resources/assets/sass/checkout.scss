@@ -1,0 +1,160 @@
+@import 'default';
+@import '_nav';
+@import '_error';
+.heading-wrap{
+	@include span(1);
+	border-bottom:1px solid grey;
+
+}
+
+.checkout-wrap{
+	@include span(1);
+	margin-bottom:5em;
+	>div{
+		@include span(1/2);
+		padding:0 10px;
+	}
+	.box{
+		@include span(1);
+		background: $grey;
+		padding:5px 10px;
+		margin:0.5em 0;
+		line-height:37px;
+	}
+
+	.left{
+
+		
+
+		.address-wrap{
+			@include span(1);
+			margin-bottom:1em;
+			.btn-wrap{
+				@include span(1);
+				text-align: center;
+			}
+
+			a{
+				width: 250px;
+				display:inline-block;
+				background: $blue;
+				border:1px solid gray;
+				padding:5px 10px;
+				@include font-open-sans(normal,$white,12pt);
+				text-align: center;
+			}
+
+			.empty{				
+				text-align: center;
+				margin-bottom:10px;
+				
+				@include font-open-sans(bold, $black, 14pt);
+			}
+		}
+
+		.shipping-wrap{
+			@include span(1);
+
+			.shipping-item{
+				@include span(1);
+				margin:0.5em 0;
+
+				span:nth-child(1)
+				{
+					margin:0 0.5em;
+				}
+
+				span:nth-child(3)
+				{
+					float:right;
+					margin: 0 1em;
+				}
+			}
+		}
+
+		.payment-wrap{
+			@include span(1);
+
+			.box{
+				padding:1em;
+			}
+
+			.input-wrap{
+				@include span(1);
+
+				&.half{
+					@include column(1/2, $cycle: 2);
+				}
+
+				label{
+					@include span(1);
+				}
+
+				input{
+					@include span(1);
+					border:2px solid $black;
+					height:40px;
+					border-radius:4px;
+				}
+			}
+		}
+	}
+
+
+	.right{
+		.box{
+			@include span(9/10);
+			margin:3em auto;
+			padding:1em 2em;	
+			float:none;
+			display:block;
+			background: $gray;
+		}
+
+		.cart-item{
+			padding:0 10px;
+		}
+
+		.cart-detail-wrap{
+			@include span(1);
+			margin:0.5em 0;		
+			padding-bottom:3em;	
+		}
+		.left-col{
+			@include span(7/10);
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+
+		.right-col{
+			@include span(3/10);
+			text-align: right;
+			@include font-open-sans(bold, $black, 12pt);
+		}
+
+		.cart-summary-wrap{
+			@include span(1);
+			border-top:1px solid $black;
+			border-bottom:1px solid $black;
+		}
+
+		.total-wrap{
+			@include span(1);
+		}
+
+		.btn-wrap{
+			@include span(1);
+			margin-top:3em;
+			text-align: right;
+			.btn-checkout{
+				border:1px solid gray;
+				background: $blue;
+				@include font-open-sans(bold, $white,12pt);
+				padding:10px 25px;
+			}
+		}
+
+
+	}
+}

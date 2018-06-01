@@ -1,0 +1,162 @@
+@import 'default';
+@import '_nav';
+@import '_quantity';
+.heading-wrap{
+	@include span(1);
+	border-bottom:1px solid grey;
+
+}
+
+.cart-container{
+	@include span(1);
+	margin-bottom:3em;
+	.cart-wrap{
+		@include span(1);
+		
+
+		tr{
+			height:150px;
+		}
+
+		td{
+			height:100%;
+		}
+
+		.cart-item{
+			@include span(1);
+			
+			border-bottom:1px solid grey;
+			position: relative;
+			display:table;
+			padding:50px 20px;			
+			@include font-open-sans(bold,$black,14pt);
+			.cart-col{
+				vertical-align: middle;
+				display:table-cell;
+				
+
+				&:nth-child(1)
+				{
+					@include span(3/10);
+				}
+				&:nth-child(2)
+				{
+					@include span(2/10);
+					text-align: center;
+				}
+				&:nth-child(3)
+				{
+					@include span(2/10);
+					text-align: center;
+				}
+				&:nth-child(4)
+				{
+					@include span(2/10);
+					text-align: center;
+				}
+				&:nth-child(5)
+				{
+					@include span(1/20);
+					text-align: center;
+				}				
+				
+
+				&.product-image{
+					padding:20px;
+					img{
+						width:100%;
+						height:auto;
+					}
+				}
+
+				&.product-name{
+					padding:0 10px;
+				}
+
+				&.product-remove{
+					text-align: center;
+
+					a{
+						display: block;
+						width: 50px;
+						margin:0 auto;
+						border-radius:10px;
+						padding:7px 10px;
+						background: $gray;
+
+						img{
+							width: 100%;
+							height: auto;
+						}
+					}					
+				}
+			}
+
+		}
+	}
+
+	.empty-wrap {
+		text-align: center;
+		margin:100px 0;	
+
+		a{			
+			background: $dark_blue;
+			@include font-open-sans(bold,$white,14pt);
+			padding:10px 20px;
+			text-align: center;
+			display:inline-block;
+			text-decoration: none;
+		}
+	}
+
+	.cart-summary{
+		@include span(1);
+		margin:1em 0;
+		padding:1em;
+		text-align: right;
+		@include font-open-sans(bold, $black, 16pt);
+
+
+		span:first-child {
+			margin-right:3em;
+		}
+	}
+
+	.cart-btn-wrap {
+		@include span(1);
+
+		.btn-item {
+			border:2px solid $blue;
+			height:50px;
+			padding:0 30px;
+			display:inline-block;
+			@include font-open-sans(bold, $blue, 14pt);
+			line-height:45px;
+			text-decoration: none;
+
+			&.btn-contd{
+				float:left;
+			}
+
+			&.btn-checkout{
+				float:right;
+				background: $blue;
+				color:$white;
+			}
+
+			&.btn-update{
+				float:right;
+				margin-right: 1em;
+				cursor:pointer;
+			}
+
+		}
+	}
+}
+
+
+
+
+
+
+

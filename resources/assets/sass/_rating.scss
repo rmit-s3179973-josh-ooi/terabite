@@ -1,0 +1,14 @@
+.rating{
+
+	i{
+		font-style:normal;
+
+		&.filled{
+			color:$orange;
+		}
+
+		&.clear{
+			color:$gray;
+		}
+	}
+}

@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
             ProductTableSeeder::class, 
             DeliveryOptionSeeder::class,
             AdminUserSeeder::class,
+            ReviewSeeder::class,
         ]);
         
     }
@@ -96,4 +97,13 @@ Class ProductSeeder extends Seeder
             'category_id' => 1,
         ]);
     }
+}
+
+Class ReviewSeeder extends Seeder
+{
+    public function run()
+    {
+        factory(App\Review::class, 50)->create();    
+    }
+    
 }

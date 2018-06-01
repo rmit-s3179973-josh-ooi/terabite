@@ -32,6 +32,12 @@ Route::group(['as'=>'website.'], function() {
 	});
 });
 
+Route::group(['as'=>'product.','prefix'=>'products'], function() {
+	Route::group(['as'=>'post.'], function() {
+		Route::get('/filter', ['as'=>'filter', 'uses'=>'ProductController@filter']);
+	});
+});
+
 Route::group(['as'=>'account.','prefix'=>'account'], function() {
 	Route::group(['as'=>'get.'], function() {
 		Route::get('/', ['as'=>'home', 'uses'=>'AccountController@index']);
@@ -42,10 +48,12 @@ Route::group(['prefix'=>'cart','as'=>'cart.'], function() {
 	Route::group(['as'=>'get.'], function(){
 		Route::get('add/{id}', ['as'=>'add','uses'=>'CartController@addItemToCart']);
 		Route::get('/',['as'=>'view','uses'=>'CartController@getCart']);
+		Route::get('/delete',['uses'=>'CartController@test']);
 	});	
 
 	Route::group(['as'=>'post.'], function() {
 		Route::get('remove/{id}',['as'=>'remove','uses'=>'CartController@removeItemFromCart','middleware'=>'cart']);
+		Route::post('/', ['as'=>'update','uses'=>'CartController@updateCart', 'middleware'=>'cart']);
 	});
 });
 

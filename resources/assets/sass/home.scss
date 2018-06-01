@@ -1,0 +1,31 @@
+@import '_default';
+@import '_nav';
+@import '_product_item';
+
+.home-container{
+	@include span(1);
+
+
+	
+	.hero-wrap{
+		@include span(1);
+		margin-top:2em;
+		img{
+			width: 100%;
+			height: auto;
+		}
+	}
+	>div{
+		@include span(1);
+		margin:1em 0;
+	}
+	.products-wrap{
+		@include span(1);
+
+
+		.product{
+			@include column(1/4,$cycle: 4);
+		}
+	}
+
+}

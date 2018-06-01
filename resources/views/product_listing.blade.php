@@ -1,104 +1,100 @@
 @extends('layout')
 
 @section('css')
-  {!! Html::style(asset('css/website/product_listing.css')) !!}
+  {!! Html::style(asset('assets/css/product_listing.css')) !!}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 @endsection
 
 
 @section('content')
 
-<!-- Add icon library -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<div class="top-nav">
-  <a href="/"> Home </a>
+<div class="crumbs">
+  <a href="{{ route('website.get.home') }}"> Home </a>
   <span> > Search Result</span>
+  <span>
+    @if(Request::has("search"))
+    > {{ Request::get("search") }}
+    @endif
+  </span>
 </div>
-
-<div class="sortBy">
-
-<form class="sort" >
- <select name="sortForm">
-  <option value="low">price: low to high</option>
-  <option value="high">price: high to low</option>
-</select>
-</form>
-<li>Sort by：</li>
-</div>
-
-<h3 class="title">Search: Search Query Text Here</h3>
-<br><br>
-
-
-<div class="items py-10">
-
-  <div class="container">
-
-		<div class="sidebar">
-
-     <form class="side-nav" >
-      <h6>Brand</h6>
-      <li><input type="checkbox" id="brand1" />
-       Brand One
-      </li>
-      <li><input type="checkbox" id="brand2" /> 
-       Brand Two
-      </li>
-      <li><input type="checkbox" id="brand3" />
-       Brand Three
-      </li>
-      <li><input type="checkbox" id="brand4" /> 
-      Brand Four
-      </li>
-      <li><input type="checkbox" id="brand5" />
-      Brand Five
-      </li>
-
-      </br>
-      </br>
-      </br>
-      </br>
-      </br>
-      </br>
-
-      <h6>Rating</h6>
-      <li>★★★★★</li></br>
-      <li>★★★★☆</li></br>
-      <li>★★★☆☆</li></br>
-      <li>★★☆☆☆</li></br>
-      <li>★☆☆☆☆</li></br>
-
-     </form>
+<div class="product-container">
+    <div class="title-wrap">
+        <div class="title">
+            <h1>Search: </h1>
+        </div>
+        <div class="filter">
+            <div class="filter-text">Sort By:</div>
+            <div class="dropdown">
+            {!! Form::open(['id'=>'sort-form']) !!}
+            {!! Form::select('sort',[''=>'','plh'=>'Lowest Price','phl'=>'Higest Price'],'',['id'=>'sort-select']) !!}
+            {!! Form::close() !!}
+            </div> 
+        </div>
     </div>
+    <div class="product-wrap">
+        <div class="product-inner-wrap">
+        <div class="sidebar">
+            <h3><strong>Brand</strong></h3>
+            {!! Form::open(array('route' =>'product.post.filter','id'=>"filter-form")) !!}
+            <ul class="brand-list">
+            @foreach($brands as $b )
+                <li class="brand-list-item">
+                    <span class="checkbox">
+                    {!! Form::checkbox('brand[]',$b) !!}
+                    </span>
+                    <span class="label">{{$b}}</span>
 
-		<div class="row">
-      @foreach ($products as $product)
-			<div class="col-sm-3">
+                </li>
+            @endforeach
+            </span>
+            </li>
+            </ul>
+            <h3><strong>Rating</strong></h3>
+            <ul class="rating-list">
 
-              <div class="card mb-4 box-shadow">
-                <td><img class="card-img" src="{{$product->images[0]->url}}"></td>
-                <div class="card-body">
-                                    
-                  <br>
-                  <td>{{$product->product_name}}</td>                              
-                  <br><strong class="card-text">$</strong>
-                  <td>{{$product->price}}</td>
-                  <br><br>
-                  
-                                       
-                    
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn1 btn-sm btn-outline-secondary" >View</button>
-                      <button type="button" class="btn2 btn-sm btn-outline-secondary"><i class ="fa fa-shopping-cart"></i></button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                @for($i = 1; $i <=5;$i++)
+                <li class="rating-list-item">
+                    <span class="checkbox">
+                        {!! Form::radio('rating',$i, old('rating') == $i ? true : false) !!}
+                    </span>
+                    <label class="label rating" for="rating" >                        
+                        @component('components/rating',['rating'=>$i])@endcomponent
+                        <span>Up</span>
+                    </label>
+                </li>
+                @endfor
+            </ul>
+            <div class="btn-wrap">
+            {!! Form::submit("Filter",["class"=>"btn btn-filter"]) !!}
             </div>
-
-@endforeach
+            {!! Form::close() !!}
+        </div>
+        <div class="product-listing">
+            @foreach($products as $prod)
+            
+                @component('components/product',['product'=>$prod])@endcomponent
+            @endforeach
+        </div>
+        </div>
+        <div class="pagination-wrap">
+            {{ $products->links() }}
+        </div>
+    </div>
 </div>
 
 
+@endsection
+
+@section('footer')
+
+{!! Html::script(asset('assets/js/jquery.serializeObject.min.js')) !!}
+{!! Html::script(asset('assets/js/filter.min.js')) !!}
+<script>
+    $("#filter-form").formSubmit("filter");
+    $("#sort-form").formSubmit("sort");
+    $("#sort-select").change(function(){
+        $("#sort-form").submit();
+    });
+</script>
 @endsection

@@ -24,8 +24,8 @@ class CartController extends Controller
         $cart->add($product,$product->id, $qty);
 
         $request->session()->put('cart',$cart);
-
-        return response()->json(['response'=>'successful']);
+        // dd($cart);
+        return response()->json(['response'=>'successful','cart'=>$cart]);
     }
 
     protected function test(Request $request)
@@ -64,6 +64,20 @@ class CartController extends Controller
         $cart->removeItem($product->id);
         
         // update session
+        $request->session()->put('cart',$cart);
+
+        return redirect()->route('cart.get.view');
+    }
+
+    protected function updateCart(Request $request)
+    {
+        $cart = Session::get('cart');
+        
+        foreach($request->get("product") as $item)
+        {            
+            $cart->updateItemQuantity(intval($item['id']),intval($item['quantity']));
+        }
+
         $request->session()->put('cart',$cart);
 
         return redirect()->route('cart.get.view');

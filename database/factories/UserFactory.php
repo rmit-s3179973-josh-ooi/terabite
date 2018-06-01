@@ -32,7 +32,7 @@ $factory->define(App\Product::class, function (Faker $faker) {
 	return [
 		'manufacturer' => $faker->company,
 		'product_name' => $faker->sentence($nbWords = 6, $variableNbWords = true),
-		'product_description' => $faker->text($maxNbChars = 200),
+		'product_description' => $faker->text($maxNbChars = 1200),
 		'price' => $faker->randomNumber(4)
 	];
 });
@@ -42,3 +42,16 @@ $factory->define(App\Image::class, function (Faker $faker) {
 		'url' => $faker->imageUrl($width = 640, $height = 480)
 	];
 });
+
+$factory->define(App\Review::class, function(Faker $faker) {
+	return [
+		'user_id' => function() {
+			return App\User::InRandomOrder()->first()->id;
+		},
+		'product_id' => function() {
+			return App\Product::InRandomOrder()->first()->id;
+		},
+		'rating' => rand(1,5),
+		'review' => $faker->paragraph($nbSentences = rand(3,10), $variableNbSentences = true)
+	];
+});	

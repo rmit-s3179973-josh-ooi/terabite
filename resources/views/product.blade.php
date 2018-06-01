@@ -2,137 +2,96 @@
 
 @section('css')
 
-{!! Html::style(asset('/css/website/productpage.css')) !!}	
-{!! Html::style(asset('/css/website/jquery.mobile.stepper.css')) !!}
+{!! Html::style(asset('assets/css/product.css')) !!}	
+{!! Html::style(asset('assets/ext/jquery-slideshow/slider.min.css')) !!}
 @endsection
 
 @section('js')
 {!! Html::script(asset('/js/counter.js')) !!}
-{!! Html::script(asset('/js/slides.js')) !!}
+{!! Html::script(asset('assets/ext/jquery-slideshow/slider.min.js')) !!}
 
 @endsection
 
 
 @section('content')
- 
-    <br>
-    <p>
-	<span><a href="http://terabite.test" >Home</a></span>
-	<span class="nowrap"> > </span>
-	
-	<span>{{$product->category->category_name}}</span>
-	<span class="nowrap"> > </span>
-	 <span class="nowrap">{{$product->product_name}}</span></p>
-	<br/>
-	<br/>
-<h2><strong>{{$product->product_name}}</strong></h2>
-   <div class="box">
-	<div class="product-image" name ="img" >
-	@foreach ($product->images as $img)
-	        <img id="Slides" src="{{$img->url}}">
-			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-	@endforeach
-	
-	</div>
-
-           
-		
-            <p class="product-price">AU: $ {{ $product->price }}</p>
-        
-		
-		<h6 class="deli">Delivery Option:</h6>
-		<h5>Standard Delivery</h5>
-		<h4>Free</h4>
-		<p class="time">Get By: 17 Apr - 20 Apr</p>
-		<h6 class="qua">Quantity</h6>
-			
-			
-	<div class ="app">
-	<div id="appw">
-	<table>
-	 <td><button type="button" class="quantity-left-minus btn btn-number"  data-type="minus" data-field="">-</button></td>
-	 <span class="glyphicon glyphicon-minus"></span>
- <td><input id="quantity" name ="quantity"class="form-control input-number" type="text" min="1" max="50" step="1" value="1"></td>
-  
-   <td><button  type="button" class="quantity-right-plus btn btn-number" data-type="plus" data-field="">+</button></td>
-    <span class="glyphicon glyphicon-plus"></span>
-   </table>
-  </div>
+<div class="crumbs">
+	<span>
+		<a href="{{ route('website.get.home') }}"> Home </a>
+	</span>
+	<span class="arrow">
+		>
+	</span>
+	<span>
+		<a href=""> {{ $product->category->category_name }} </a>
+	</span>
+	<span class="arrow">
+		>
+	</span>
+	<span>
+		{{$product->product_name}}
+	</span>
 </div>
-
-
-<div class="product-but">        	
-          <form action="{{ url('http://terabite.test/cart') }}" method="POST" class="side-by-side">
-                    {!! csrf_field() !!}
-                    <input type="hidden" name="id" value="{{ $product->product_id }}">
-                    <input type="hidden" name="name" value="{{ $product->product_name }}">
-                    <input type="hidden" name="price" value="{{ $product->price }}">      
-        <button class="btn btn-primary" type="submit">Add to Cart</button>
-            
+<div class="product-container">
+	<h2>{{$product->product_name}}</h2>
+	<div class="product-info-wrap">
+		<div class="image-wrap">
+			<div class="product-image" name ="img" >
+			  @foreach ($product->images as $img)
+			          <img id="Slides" src="{{$img->url}}">
+			      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+			  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+			  @endforeach
+			  
+			  </div>
+		</div>
+		<div class="product-info">
+			<div class="product-price">
+				AUD {{$product->price }}
+			</div>
+			<div class="delivery"></div>
+			<div class="quantity">
+				
+			</div>
+			<div class="rating">
+				@component('components/rating',['rating'=>$product->rating])@endcomponent
+			</div>
+			<div class="btn-wrap">
+				<button type="submit" class="btn-add-to-cart">ADD TO CART</button>
+			</div>
+		</div>
 	</div>
+	<div class="product-desc-wrap">
+		<h3>Product Description</h3>
+		<p>
+			{{ $product->product_description }}
+		</p>
 	</div>
-	
-	<div class="rate">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-						<div class="rating">
-							
-					 <h1 class= "star">★★★★★</h1>
-									
-										</div>
-	  </div>
-	<br/>
-	
-	<h4 class="des">Product Description</h4>
-	<br/>
-
-    <p>{{$product->product_description}}</p>
-
-  <br/>
- 
-  <h4 class="rev">Product Review</h4>
-<br/>
-
-<div class="r1">
-<p class="name">John Doe</p><div class="product-reviews">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-                    <div class="rating">
-                        
-                   <h2 class= "star">★★★★★</h2>
-								
-																		</div>
-																	</div>
-		  	<p class="date"> Nov 13 18</p>
-I like this poduct very much and I will buy it much more in the future.
+	<div class="product-review-wrap">
+		<h3>Product Review</h3>
+		<div class="review-wrap">			
+			@foreach($product->reviews as $review)
+			<div class="review-item">
+				<h4>{{ $review->user_name }}</h4>
+				<div class="review-rating">
+					<span class="rating">
+						@component('components/rating',['rating'=>$review->rating])@endcomponent
+					</span>
+					<span class="review-date">
+					{{ $review->date }}	
+					</span>
+				</div>
+				<div class="review-desc">{{ $review->review }}</div>
+			</div>
+			@endforeach
+		</div>
+	</div>
 </div>
-<br/>
-<div class="r2">
-<p class="name2">John Doe</p><div class="product-reviews">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-                    <div class="rating">
-                        
-                    
-								<h2 class= "star">★★★★★</h2>
-																		</div>
-																	</div>
-	<p class="date2"> Nov 13 18</p>
-I like this poduct very much and I will buy it much more in the future.
-</div>
-
-<div class="but2">        	
-                
-        <button class="btn btn-primary" type="submit">Load more</button>
-            
-	</div>
-	<br/>
-<br/>
- <br/>          
-    
-
-
-
 
  @endsection
+
+
+@section('footer')
+<script type="text/javascript">
+ 
+</script>
+@endsection

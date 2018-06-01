@@ -1,0 +1,9 @@
+.crumbs{
+	@include span(1);
+	padding: 20px 0;
+	border-bottom:1px solid grey;
+
+	.arrow{
+		padding:0 10px;
+	}
+}

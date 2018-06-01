@@ -44,10 +44,10 @@ class CheckoutController extends Controller
         $request->validate([
             'address_option' =>'required',
             'delivery_option' =>'required',
-            // 'payment_number' =>'required',
-            // 'payment_name' =>'required',
-            // 'payment_expiry' =>'required',
-            // 'payment_cvc' =>'required',
+            'payment_number' =>'required',
+            'payment_name' =>'required',
+            'payment_expiry' =>'required',
+            'payment_cvc' =>'required',
         ]);
         $cart = $request->session()->pull('cart');
         try{
@@ -62,7 +62,7 @@ class CheckoutController extends Controller
             [
                 'user_id' => $user->id,
                 'delivery_option_id' => $delivery->id,
-                'total' => $cart->totalPrice,
+                'total' => $cart->totalPrice + $delivery->cost,
                 'qty' => $cart->totalQty,
             ]);
 

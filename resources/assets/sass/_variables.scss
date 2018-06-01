@@ -1,8 +1,42 @@
 
 // Body
-$body-bg: #f5f8fa;
+$light-blue: #6699FF;
+$blue: #336699;
+$orange: #FF9933;
+$red: #FF0000;
+$dark-blue: #003366;
+$black: #333333;
+$white: #FFFFFF;
+$grey : #F2F2F2;
+$gray:#CCCCCC;
+$red:#ff9999;
 
 // Typography
 $font-family-sans-serif: "Raleway", sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
+
+//mixin
+@mixin font-open-sans($weight, $color, $size)
+{
+	@include font('Open Sans',$weight, $color, $size);
+		
+}
+
+@mixin font-roboto($weight, $color, $size)
+{	
+	@include font('roboto',$weight, $color, $size);
+}
+
+
+@mixin font($family, $weight, $color, $size)
+{
+	font-family: $family;
+	font-weight:$weight;
+	font-size:$size;
+	color:$color;
+}
+
+h1,h2,h3,h4,h5{
+	font-family: 'roboto';
+}

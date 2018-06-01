@@ -1,0 +1,78 @@
+@import 'default';
+@import '_nav';
+@import '_crumbs';
+@import '_rating';
+
+.product-container{
+	@include span(1);
+	
+	.product-info-wrap{
+		@include span(1);
+
+		.image-wrap{
+			@include span(7/10);
+		}
+
+		.product-info{
+			@include span(3/10);
+			background: $grey;
+			padding:10px;
+
+			>div{
+				margin:10px 0;
+			}
+
+			.product-price{
+				text-align: center;
+				@include font-open-sans(bold,$light_blue,24pt);
+				
+			}
+
+			.quantity{
+
+			}
+
+			.rating{
+				font-size:35pt;
+				text-align: center;				
+			}
+
+			.btn-wrap{
+				text-align: center;
+
+				.btn-add-to-cart{
+					border:none;
+					width:100%;
+					padding:10px 0;
+					@include font-open-sans(bold, $white,15pt);
+					background: $light_blue;
+				}
+			}
+		}
+	}
+
+	.product-review-wrap{
+		@include span(1);
+
+		.review-wrap{
+			@include span(1);
+
+			.review-item{
+				@include span(1);
+				margin:10px 0;
+				background: $grey;
+				padding:20px;
+				@include font-open-sans(normal, $black, 10pt);
+
+				h4{
+					@include font-roboto(bold,$black,12pt);
+					margin:0;
+				}
+
+				div{
+					margin:10px 0;
+				}
+			}
+		}
+	}	
+}

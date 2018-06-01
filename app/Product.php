@@ -29,4 +29,30 @@ class Product extends Model
     {
         return $this->hasMany(Review::class);
     }
+
+    public function ratings()
+    {
+        $reviews = $this->reviews()->get();
+        $ratings = 0;
+        foreach($reviews as $rev)
+        {
+            $ratings += $rev->rating;
+        } 
+        if($ratings == 0)
+            return 0;
+
+        return round($ratings / count($reviews));
+    }
+
+    public function getRatingAttribute()
+    {
+        return $this->ratings();
+    }
+
+    public static function getBrands()
+    {
+        return Product::select('manufacturer')->distinct()->get()->map(function($item, $key) {
+            return $item["manufacturer"];
+        })->toArray(); 
+    }
 }

@@ -1,0 +1,33 @@
+.quantity-wrap{
+	@include span(1);
+	text-align: center;
+	border:1px solid gray;
+
+	>div{
+		padding:10px;
+	}
+
+	.decrease{
+		@include span(1/4);
+		
+		&:hover{
+			background: $grey;
+			cursor:pointer;
+		}
+	}
+
+	.display{
+		@include span(1/2);
+		border-left:1px solid gray;
+		border-right:1px solid gray;
+	}
+
+	.increase {
+		@include span(1/4);
+
+		&:hover{
+			background: $grey;
+			cursor:pointer;
+		}
+	}
+}

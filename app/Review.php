@@ -17,4 +17,16 @@ class Review extends Model
     {
     	return $this->belongsTo(Product::class);
     }
+
+    public function getUserNameAttribute()
+    {
+    	$user = $this->user;
+    	
+    	return $user->name;
+    }
+
+    public function getDateAttribute()
+    {
+    	return $this->created_at->format('d M Y');
+    }
 }

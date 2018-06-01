@@ -1,0 +1,138 @@
+.footer{
+	@include span(1);	
+	background: $blue;
+	color:$white;
+
+	.footer-item{		
+		padding: 1em;
+
+		&:nth-child(1){
+			@include column(3/10, $cycle: 3);
+		}
+
+		&:nth-child(2){
+			@include column(4/10, $cycle: 3);
+		}
+
+		&:nth-child(3){
+			@include column(3/10, $cycle: 3);
+		}
+
+		ul{
+			@include span(1)
+		}
+
+		.link-item{
+			@include span(1);
+			margin-bottom:1em;
+
+			a{
+				@include font-open-sans(bold, $white,16pt);
+				text-decoration: none;	
+			}
+			
+		}
+
+		h3{
+			@include font-open-sans(bold, $white,16pt);
+			margin:0;
+		}
+
+		.cat-list{
+			@include span(1);
+			margin:1em 0;
+			.cat-item {
+				@include column(1/2, $cycle: 2);
+				margin:0.3em 0;
+
+				a{
+					@include font-open-sans( normal, $white,12pt);
+				}
+			}
+		}
+
+		.newsletter-wrap{
+			@include span(1);
+			margin:1em 0;
+
+			.newsletter-copy{
+				@include span(1);
+				@include font-open-sans( normal, $white,10pt);
+				margin-bottom:0.5em;
+			}
+
+			.form-input-wrap
+			{
+				@include span(1);
+				margin:10px 0;
+			}
+
+			.form-input{
+				
+
+
+				.newsletter-input{
+					@include span(8/10);
+					float:left;
+					display: inline-block;
+					border:1px solid $dark_blue;
+					border-radius:2px;
+					height:40px;
+					padding:2px 5px;
+				}
+
+				.newsletter-btn{
+					$length:40px;
+					width:$length;
+					height:$length;
+					float:left;
+					display: inline-block;
+					border:1px solid $dark_blue;
+					border-radius:2px;
+					margin: 0 5px;
+					background: $light_blue;
+					@include font-open-sans(bold, $white, 12pt);
+				}
+			}
+		}
+
+		.social-wrap{
+			@include span(1);
+
+			.newsletter-copy{
+				@include span(1);
+				@include font-open-sans( normal, $white,10pt);
+				margin-bottom:0.5em;
+			}
+
+			.social-list{
+				@include span(1);
+				margin:0.5em 0;
+				.social-item{
+					display:inline-block;
+					float:left;
+					margin-right: 10px;
+				}
+			}
+		}
+	}
+
+	.lower-footer-wrap{
+		@include span(1);
+		margin-top:3em;
+		background: $dark-blue;
+		padding:1em;
+
+		.lower-footer-container{
+			@include span(5/10);
+			float:none;
+			display:block;
+			margin:0 auto;
+			text-align: center;
+
+			.lower-footer-item{
+				@include span(1/3);
+			}
+		}
+	}
+}

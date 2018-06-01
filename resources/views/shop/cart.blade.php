@@ -1,9 +1,13 @@
 @extends('layout')
-@inject('Hashids','Vinkla\Hashids\Facades\Hashids')
-@section('content')
-<h1>Shopping Cart</h1>
 
-<hr>
+@section('css')
+{!! Html::style(asset('assets/css/cart.css')) !!}
+@endsection
+
+@section('content')
+<div class="heading-wrap">
+	<h1>Shopping Cart</h1>	
+</div>
 
         @if (session()->has('success_message'))
             <div class="alert alert-success">
@@ -17,53 +21,52 @@
             </div>
         @endif
 		
-		
+<div class="cart-container">
 @if (!is_null($cart))
+<div class="cart-wrap">
+	{!! Form::open(["id"=>"form"]) !!}
+	@foreach( $cart->items as $key => $item)	
+	<div class="cart-item">		
+		<div class="cart-col product-name">{{$item['item']->product_name}}</div>
+		<div class="cart-col product-price">AUD {{$item['item']->price}}</div>
+		<div class="cart-col product-qty" id="quantity">		
+			@component('components/quantity',['item'=>$item])@endcomponent
+		</div>
+		<div class="cart-col product-total">AUD {{$item['price']}}</div>
+		<div class="cart-col product-remove">
+			<a href="{{ route('cart.post.remove', $item['item']->id) }}"><img src="{{ asset('assets/images/icons/trash.png') }}" alt=""></a>
+		</div>
+	</div>	
+	@endforeach
+	
+</div>
+<div class="cart-summary">
+	<span>Subtotal: </span><span> AUD {{$cart->totalPrice}}</span>
+</div>
+<div class="cart-btn-wrap">
+	<a href="{{ route('website.get.home') }}" class="btn-item btn-contd">Continue Shopping</a>
+	<a href="{{ route('checkout.get.view') }}" class="btn-item btn-checkout">Checkout</a>
+	{!! Form::submit("Update",['class'=>'btn-item btn-update']) !!}
+</div>
 
-<table>
-<thead>
-	<tr>
-	    <th class="table-image"></th>
-		<th>Product name</th>
-		<th>Quantity</th>
-		<th>Price</th>
-		<th>Total</th>
-		<th></th>
-	</tr>
-	</thead>
-	<tbody>
-@foreach( $cart->items as $item)
-	<tr>
-	    <td class="table-image"><img src="{{ asset('img/' . $item['item']->image) }}" alt="product" class="img-responsive"></td>
-		<td>{{$item['item']->product_name}}</td>
-		<td>{{$item['item']->price}}</td>
-		<td>{{$item['qty']}}</td>
-		<div><input type="text" name="cart_quantity[]" value="1" size="2" /><input type="hidden" name="products_id[]" value="170662" /><input type="hidden" name="old_qty[]" value="1" /></div>
-		<td>{{$item['price']}}</td>
-		<p>
-            <form action="{{ route('cart.post.remove', ['item' => $item['item']->id]) }}" method="POST">
-                {{ csrf_field() }}
-				 <input type="hidden" name="_method" value="DELETE">
-                 <input type="submit" class="btn btn-danger btn-sm" value="Remove">
-				 
-            </form>
-        </p>
-	</tr>
-     
-@endforeach
-<tr>
-	<td></td>
-	<td></td>
-  
-  </tr>
-	<td>{{$cart->totalQty}}</td>
-	<td>{{$cart->totalPrice}}</td>
-</tr>
-</table>
-<div><input type="submit" alt="Update shopping cart" title="Update shopping cart" value="Update shopping cart" data-icon="refresh"></div>
+{!! Form::close() !!}
 @else
-<h1>Cart is empty</h1>
+<div class="empty-wrap">
+	<h1>Your Cart is Empty</h1>	
+	<a href="{{ route('website.get.home') }}">Shop Now</a>
+</div>
+
 @endif
+</div>		
 
+@endsection
 
+@section('footer')
+
+@if (!is_null($cart))
+{!! Html::script(asset('assets/js/quantity.min.js')) !!}
+<script>
+	$("#quantity").quantity();
+</script>
+@endif
 @endsection

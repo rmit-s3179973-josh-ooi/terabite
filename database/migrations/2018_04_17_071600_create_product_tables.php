@@ -23,7 +23,7 @@ class CreateProductTables extends Migration
             $table->increments('id');
             $table->string('manufacturer');
             $table->string('product_name');
-            $table->string('product_description');
+            $table->text('product_description');
             $table->integer('category_id')->unsigned()->nullable();
             $table->integer('price')->unsigned();
             $table->boolean('is_activated')->default(false);
