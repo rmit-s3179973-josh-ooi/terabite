@@ -1,75 +1,41 @@
-@extends('layout')
+@extends('auth/auth')
 
-@section('css')
-
-
-	{!! Html::style(asset('css/website/nav.css')) !!}
-	{!! Html::style(asset('css/website/register.css')) !!}
-
-
+@section('auth_right')
+	<div class="login-wrap border">
+	<h1>Register</h1>
+	{!! Form::open() !!}
+	<div class="input-wrap">
+		<label class="fw-label" for="">Name</label>
+		{!! Form::text('name', Input::old('name') !== null ? Input::old('name') : null,['class'=>'form-control','placeholder'=>'name']) !!}
+	</div>
+	<div class="input-wrap">
+		<label class="fw-label" for="">Email</label>
+		{!! Form::email('email', Input::old('email') !== null ? Input::old('email') : null,['class'=>'form-control','placeholder'=>'Email']) !!}
+	</div>
+	<div class="input-wrap">
+		<label class="fw-label" for="">Password</label>
+		{!! Form::password('password',['class'=>'form-control','placeholder'=>'Password']) !!}
+	</div>	
+	<div class="input-wrap">
+		<label class="fw-label" for="">Re-enter Password</label>
+		{!! Form::password('password_confirmation',['class'=>'form-control','placeholder'=>'Password']) !!}
+	</div>
+	<div class="input-wrap">
+		{!! Form::submit('LOGIN',['class'=>'btn btn-primary','id'=>'sub-content']) !!}
+		<a href="{{route('website.get.reset.password') }}"></a>
+	</div>
+	{!! Form::close() !!}
+	</div>
 @endsection
 
-@section('content')
-	<div class="wrap">
-
-		@if (count($errors) > 0)
-			<div class="error-wrap">
-				<div class="errors">
-					<ul>
-						@foreach ($errors->all() as $error)
-							<li>{{ $error }}</li>
-						@endforeach
-					</ul>
-				</div>
-			</div>
-		@endif
-
-		<body>
-		<div class="main">
-			<div id="content2">
+	
 
 
-				<div class="column content-info" id="border-one">
-					<div ><h1 id="subheading"><strong>Already Have An Account?</strong></h1>
-						<h6>Log in now to view products tailored for you!</h6></div>
-					<a href="{{ route('website.get.login') }}" class="form-control btn btn-primary">Login Now</a>
-				</div>
 
-
-				<div class="column" id="border">
-					<div class="heading">Register</div>
-					{!! Form::open() !!}
-					<div class="group field-sep">
-						<label for="">
-							Name</label>
-						{!! Form::text('name',Input::old('name') !== null ? Input::old('name') : null,['class'=>'form-control name','placeholder'=>'Name']) !!}
-					</div>
-					<div class="group field-sep">
-						<label for="txtUserEmail">
-							Email</label>
-						{!! Form::email('email',Input::old('email') !== null ? Input::old('email') : null,['class'=>'form-control email','placeholder'=>'Email']) !!}
-					</div>
-					<div class="group field-sep">
-						<label for="txtUserEmail">
-							Password</label>
-						{!! Form::password('password',['class'=>'form-control password','placeholder'=>'Password']) !!}
-					</div>
-					<div class="group field-sep">
-						<label for="txtUserEmail">
-							Confirm Password</label>
-						{!! Form::password('password_confirmation',['class'=>'form-control confirm','placeholder'=>'Confirm Password']) !!}
-					</div>
-					<div class="group field-sep">
-						{!! form::submit('Submit',['class'=>'form-control btn btn-primary']) !!}
-					</div>
-					{!! Form::close() !!}
-				</div>
-
-
-			</div>
-		</div>
-
-
-		</body>
+@section('auth_left')
+	<div class="login-wrap text-center cta-wrap">
+		<h1>Already Have<br/> An Account?</h1>
+		<p>Log in now to view products tailored for you!</p>
+		<a href="{{ route('website.get.login') }}">Login Now</a>
 	</div>
 @endsection

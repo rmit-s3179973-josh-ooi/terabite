@@ -1,0 +1,119 @@
+@import '_default';
+@import '_nav';
+@import '_error';
+
+.auth-wrap{
+	@include span(1);
+
+	.left, .right{
+		@include column(1/2, $cycle:2);
+		padding:1em;
+		height:560px;
+		display:table;
+	}
+	
+
+	.cta-wrap{
+		text-align: center;
+
+		h1{
+			margin:0;
+			margin-bottom:0.5em;
+		}
+		p{
+			@include font-open-sans(bold,$black,12pt);
+			padding:0 20%;
+		}
+		
+		a{
+			margin:1em 0;
+			@include span(5/10);
+			padding:0.5em;
+			background: $blue;
+			@include align(horizontal);
+			@include font-open-sans(bold,$white,14pt);
+			border-radius:4px;
+		}
+
+	}	
+
+
+	.form-wrap{
+		@include span(1);	
+		float:none;	
+		position: relative;
+		display:table-cell;
+		vertical-align:middle;
+
+
+		form{
+			@include span(1);
+		}
+
+		.login-wrap{
+			@include span(8/10);
+			float:none;
+			margin:0 auto;
+			float:none;
+			margin:0 auto;
+			padding:1em;
+
+			&.border{
+				border:3px solid $blue;
+				border-radius:20px;
+			}
+
+			&.text-center{
+				text-align: center;
+			}
+		}
+
+		h1{
+			@include font-roboto(bold,$blue,30pt);
+			text-align: center;
+		}
+
+		.input-wrap{
+			@include span(1);
+			margin:0.5em;
+			position: relative;
+			padding-right:1em;
+			
+			.fw-label{
+				@include span(1);
+				padding:0.5em 0.2em;
+				@include font-open-sans(normal,$black,10pt);
+			}
+
+			input[type=text],
+			input[type=password] {
+			    box-sizing : border-box;
+			}
+
+			.form-control{
+				@include span(1);
+				padding:0.5em;
+				height: 40px;
+				border:2px solid $gray;
+				border-radius:5px;
+				line-height:35px;
+				@include font-open-sans(normal,$black,12pt);
+			}
+
+			&.no-margin{
+				margin:0 0.5em;
+			}
+
+			.btn{
+				@include span(1);
+				background: $blue;
+				text-align: center;
+				@include font-open-sans(bold,$white,14pt);
+				padding:0.5em;
+				border:none;
+				border-radius:4px;
+				cursor:pointer;
+			}
+		}
+	}
+}
