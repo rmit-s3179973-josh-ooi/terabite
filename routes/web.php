@@ -38,9 +38,14 @@ Route::group(['as'=>'product.','prefix'=>'products'], function() {
 	});
 });
 
-Route::group(['as'=>'account.','prefix'=>'account'], function() {
+Route::group(['as'=>'account.','prefix'=>'my'], function() {
 	Route::group(['as'=>'get.'], function() {
 		Route::get('/', ['as'=>'home', 'uses'=>'AccountController@index']);
+		Route::get('category',['as'=>'add.catergory','uses'=>'AccountController@category']);
+	});
+
+	Route::group(['as'=>'post.'], function(){
+		Route::post('category',['as'=>'add.catergory','uses'=>'AccountController@postCategory']);		
 	});
 });
 
@@ -67,5 +72,29 @@ Route::group(['prefix'=>'checkout','as'=>'checkout.'], function() {
 	Route::group(['as'=>'post.'], function() {
 		Route::post('/',['as'=>'checkout', 'uses'=>'CheckoutController@postCheckout']);
 		Route::post('add/address', ['as'=>'add.address','uses'=>'CheckoutController@postAddAddress']);
+	});
+});
+
+
+Route::group(['prefix'=>'admin','as'=>'admin.','middleware'=>['auth','admin']], function(){
+
+	Route::get('/', ['as'=>'get.home','uses'=>'Admin\AdminController@index']);
+
+	Route::group(['prefix'=>'product','as'=>'product.'], function(){
+		Route::get('add', ['as'=>'get.add','uses'=>'Admin\ProductController@create']);
+		Route::get('/', ['as'=>'get.home','uses'=>'Admin\ProductController@index']);
+		Route::get('/edit/{id}', ['as'=>'get.edit','uses'=>'Admin\ProductController@edit']);
+
+		Route::post('add', ['as'=>'post.add','uses'=>'Admin\ProductController@store']);
+		Route::post('/edit/{id}', ['as'=>'post.edit','uses'=>'Admin\ProductController@update']);
+	});
+
+	Route::group(['prefix'=>'category','as'=>'category.'], function(){
+		Route::get('/',['as'=>'get.home','uses'=>'Admin\CategoryController@index']);
+		Route::get('/add',['as'=>'get.add','uses'=>'Admin\CategoryController@create']);
+		Route::get('/edit', ['as'=>'get.edit','uses'=>'Admin\CategoryController@index']);
+		Route::get('delete/{id}',['as'=>'get.delete', 'uses'=>'Admin\CategoryController@delete']);
+
+		Route::post('/add',['as'=>'post.add','uses'=>'Admin\CategoryController@store']);
 	});
 });

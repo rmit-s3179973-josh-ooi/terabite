@@ -10,7 +10,7 @@ use App\Cart;
 class CartController extends Controller
 {
     protected function addItemToCart(Request $request, $id)
-    {
+    {        
         try{
             $product = Product::findOrFail($id);  
         }catch(ModelNotFoundException $e)
@@ -24,8 +24,9 @@ class CartController extends Controller
         $cart->add($product,$product->id, $qty);
 
         $request->session()->put('cart',$cart);
-        // dd($cart);
-        return response()->json(['response'=>'successful','cart'=>$cart]);
+        
+        return response()->json(['response'=>'successful','cart'=>$cart->totalQty,'product'=>$product->cartDisplay()]);
+        
     }
 
     protected function test(Request $request)

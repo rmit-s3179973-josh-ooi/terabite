@@ -1,5 +1,12 @@
 @extends('layout')
 
+@section('name')
+My Account
+@endsection
+@section('css')
+{!! Html::style(asset('assets/css/category.css')) !!}
+@endsection
+
 @section('content')
 
 <table>

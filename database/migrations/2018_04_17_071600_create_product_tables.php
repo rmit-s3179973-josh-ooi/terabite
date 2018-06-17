@@ -38,6 +38,7 @@ class CreateProductTables extends Migration
         Schema::create('category_user', function(Blueprint $table) {
             $table->integer('category_id')->unsigned();
             $table->integer('user_id')->unsigned();
+            $table->integer('priority')->unsigned();
             $table->timestamps();
 
             $table->foreign('category_id')
@@ -54,6 +55,7 @@ class CreateProductTables extends Migration
         Schema::create('images', function(Blueprint $table) {
             $table->increments('id');
             $table->string('url');
+            $table->string('thumbs');
             $table->integer('product_id')->unsigned();
             $table->timestamps();
 

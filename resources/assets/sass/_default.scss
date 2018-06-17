@@ -39,3 +39,57 @@ a:visited{color:inherit}
 	margin:0 auto;
 	float:none;
 }
+
+.remodal{
+	.wrap{
+		@include span(1);
+		margin:1em 0;
+
+		.img-wrap{
+			@include span(3/10);
+			float:left;
+			img{
+				width: 100%;
+				height: auto;
+			}
+		}
+		.text{
+			@include span(7/10);
+			float:left;
+		}		
+	}
+	.body{
+			@include span(1);
+
+			.remodal-cancel{
+				padding:0.5em 1em;
+				background: $white;
+				color:$dark-blue;
+				border:2px solid $dark-blue;
+				float:right;
+			}
+
+			.btn-checkout{
+				display:inline-block;
+				margin-left:1em;
+				padding:0.5em 1em;
+				background: $dark-blue;
+				color:$white;
+				border:2px solid $dark-blue;
+				float:right;
+			}
+		}
+}
+
+
+.flash{
+	@include span(1);
+	padding:1em;
+	line-height:35px;
+	text-align: center;
+	
+	&.flash-error{
+		background: $red;
+		@include font-open-sans(bold,$black,16pt);
+	}	
+}

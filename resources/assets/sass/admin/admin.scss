@@ -1,0 +1,472 @@
+@import '_default';
+@import '_sidebar';
+
+.container{
+	height:100%;
+
+	.dashboard{
+		@include span(1);
+		height:100%;
+
+		.dashboard-item{
+			position: relative;
+		}
+
+		>.sidebar{
+			@include span(1.5/10);
+			height:100%;
+		}
+
+		>.body{
+			@include span(8.5/10);
+			padding:1em;						
+			background: $dashboard_body_bg;
+			height:100%;
+			overflow: auto;
+
+			h1{
+				text-transform: capitalize;
+			}
+
+			.dashboard-wrap{
+				@include span(1);
+
+				.title-wrap{
+					@include span(1);
+					font-weight: bold;
+					font-size:18pt;
+					margin:0.5em 0;
+				}
+
+				.tables{
+					@include span(1);
+				}
+
+				.tables-wrap{
+					@include column(7/10, $cycle:2);
+					padding:1em;
+					border-right:1px solid rgba(66,66,66,0.3);
+
+
+
+					.table{
+						@include column(1/3, $cycle:3);
+						border:1px solid rgba(66,66,66,0.2);
+						padding:1em;
+						margin-bottom:1em;
+						border-radius:4px;
+
+						h4{
+							text-align: center;
+							margin:0.5em 0;
+						}
+
+						.seat-wrap{
+							margin-bottom:0.5em;
+							text-align: center;
+						}
+
+						.drop-zone{
+							position:relative;
+							@include span(1);
+							border:3px dashed rgba(66,66,66,0.5);
+							border-radius:8px;
+
+							img{
+								width:100%;
+								height:auto;
+								opacity:0;
+							}
+
+							.overlay{
+								position: absolute;
+								top:0;
+								left:0;
+								width:100%;
+								height:100%;
+								text-align: center;
+								padding:1em;
+								font-weight:bold;
+								color:rgba(66,66,66,0.7);
+								font-size:15pt;
+							}
+						}
+					}
+				}
+
+				.company-wrap{
+					@include column(3/10, $cycle:2);
+					padding:1em;
+
+					.company-item{
+						@include span(1);
+						border:1px solid rgba(66,66,66,0.2);
+						border-radius:2px;
+						background: #f2f2f2;
+						padding:0.5em;
+						margin:.3em 0;
+
+						.company-name{
+							float:left;
+						}
+						.guest-count{
+							float:right;
+							padding: 0 0.3em;
+							border:2px solid rgba(66,66,66,0.7);
+							border-radius:4px;
+							background: rgba(255,255,255,0.4);
+						}
+
+						&.placeback{
+							border:3px dashed rgba(66,66,66,0.5);							
+							background: #FFFFFF;						
+							text-align: center;
+							color:rgba(66,66,66,0.5);
+						}
+					}
+				}
+			}
+
+
+			.dashboard-content{
+				@include span(1);
+				padding:1em;
+				border-radius: 4px;
+				border:1px solid rgba(66,66,66,0.15);
+				background: $dashboard_body_bg_alt;
+				margin:0.5em 0;
+				overflow: auto;
+
+				&.third{
+					@include column(1/3, $gutter: 0.5);
+				}
+
+				table{
+					width: 100%;						
+
+					th{
+						border-bottom:1px solid rgba(66,66,66,0.5);
+					}
+					tr{
+						&:nth-child(2n-1){
+							background:#e5e5e5;
+						}
+						&:first-child{
+							background:$white;
+						}
+
+						td{
+							padding: 0.6em 1em;
+
+						}
+					}				
+
+					.wishlist-col{
+						padding: 0.6em 1em;
+						margin:0;				
+
+						img{
+							width:80px;
+
+						}		
+						
+						&:first-child{
+							@include span(3/10);
+							text-align: center;
+						}
+						&:nth-child(2){
+							@include span(4/10);
+							text-align: center;
+						}
+						&:nth-child(3){
+							@include span(1/10);
+							text-align: center;
+						}
+						&:nth-child(4){
+							@include span(1/10);
+							text-align: center;
+						}
+						&:nth-child(5){
+							@include span(1/10);
+							text-align: center;
+						}
+					}
+
+					.event-col{
+						padding: 0em 1em;
+						margin:0;
+						line-height: 33px;
+						
+						&:first-child{
+							@include span(2/12);
+						}
+						&:nth-child(2){
+							@include span(2/12);
+							text-align: center;
+						}
+						&:nth-child(3){
+							@include span(2/12);
+							text-align: center;
+						}
+						&:nth-child(4){
+							@include span(2/12);
+							text-align: center;
+						}
+						&:nth-child(5){
+							@include span(2/12);
+							text-align: center;
+						}
+						&:nth-child(6){
+							@include span(2/12);
+							text-align: center;
+						}
+					}
+
+					.guest-col{
+						padding: 0em 1em;
+						margin:0;						
+						line-height: 33px;
+						
+						&:first-child{
+							@include span(1.5/10);
+							text-align: center;
+						}
+						&:nth-child(2){
+							@include span(2/10);
+							text-align: center;
+						}
+						&:nth-child(3){
+							@include span(4/10);
+							text-align: center;
+						}
+						&:nth-child(4){
+							@include span(1/10);
+							text-align: center;
+						}
+						&:nth-child(5){
+							@include span(1.5/10);
+							text-align: center;
+						}						
+					}
+
+					.code-col{
+						text-align: center;						
+					}
+
+					.event-span{
+						border:1px solid rgba(66,66,66,0.3);
+						border-radius:4px;
+						padding:2px 0.5em;
+						margin:0 3px;
+						
+					}
+				}
+
+				
+
+				.form{
+					@include span(1);
+
+					.form-col{
+						@include span(1/2);
+
+						.input-group{
+							@include span(1);
+							border: 1px solid rgba(66,66,66,.2);
+							border-radius: 4px;
+							padding:0.5em 1em;
+							label{
+								@include column(2/10);						
+								font-size: 12pt;
+								line-height: 25px;
+							}
+							input[type='number']{
+								@include column(3/10);
+								height:30px;	
+								padding:0 0.5em;					
+							}
+
+							.set-group{
+								@include span(1);
+								margin:0.5em 0;
+							}
+
+							.btn-group{
+								@include span(1);
+								margin:0.5em 0;
+
+								.btn{
+									color:black;
+									margin:0 auto;
+									float:none;
+								}
+							}
+						}
+					}
+				}
+
+				.album-form-group{
+					h2{
+						margin:0;
+					}
+					@include span(1/2);
+					padding:2em;
+					border:1px solid rgba(66,66,66,0.2);
+					border-radius:4px;
+				}	
+
+				.page-wrap{
+					@include span(1);
+					margin:1em 0;
+					ul{
+						position: relative;
+						width:auto;
+						height:auto;
+						margin:0 auto;
+						text-align: center;
+					}
+
+					li{
+						display: inline-block;
+						padding:0.5em 1em;
+						border:1px solid rgba(66,66,66,0.3);
+						border-radius:4px;
+						margin:0 4px;
+
+						&.active{
+							color:#e5e5e5;
+						}
+
+						a{
+							display: block;
+						}
+					}
+				}			
+			}
+
+			.album-content{
+				@include span(1);
+
+				&.album-thumbnail{
+
+					.album-wrap{
+						padding-bottom:0;
+					}
+				}
+
+				.album-wrap{
+					@include column(1/4);
+					padding:1em;
+					border-radius: 4px;
+					border:1px solid rgba(66,66,66,0.15);
+					background: $dashboard_body_bg_alt;
+					margin-top:0.5em;
+					margin-bottom:0.5em;
+					overflow: auto;
+
+					>div{
+						@include span(1);
+					}
+
+					.img-wrap{
+
+						img{
+							width:100%;
+							height:auto;
+							display: block;
+							border:1px solid rgba(66,66,66,0.1);
+						}
+					}
+
+					.desc-wrap{
+						position: relative;
+
+						.album-name{
+							@include span(9/10);
+							text-transform: capitalize;
+							line-height: 35px;
+						}
+
+						.album-status{
+							@include span(1/10);
+							position: relative;
+							cursor:pointer;
+
+							&::after{
+								$length:15px;
+								position: absolute;
+								top:0;
+								right:0;
+								width:$length;
+								height:$length;
+								border-radius:50%;
+								border:1px solid rgba(66,66,66,0.6);								
+								margin-top: 10px;
+							}
+
+							&.disable{
+
+								&::after{									
+									background: $btn_fail_color;
+								}
+							}
+
+							&.enable{
+
+								&::after{									
+									background: $btn_success_color;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.dashboard-error{
+		@include span(1);
+		float:left;
+		background:$dashboard_body_bg;
+
+		.btn{
+			@include column(1/2);
+		}
+	}	
+
+}
+
+.table-form{
+
+	.form-group-horizontal{
+		@include span(1);
+
+		.form-span{
+			float:left;
+			margin:0 0.5em;
+
+			input[type='integer']{
+				width:250px;
+				padding:0.45em;
+				font-size:11pt;
+				margin:0 0.5em;
+			}
+		}
+	}
+}
+
+.alert{
+	@include span(1);
+	padding:1em;
+
+	&.alert-danger{
+		li{
+			background: $error_bg_alt;
+			border: 1px solid $error_border_alt;
+			border-radius:4px;
+			padding:0.5em;
+			margin:0.4em 0;
+		}
+		
+	}
+}

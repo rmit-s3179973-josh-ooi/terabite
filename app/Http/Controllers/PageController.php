@@ -12,7 +12,7 @@ class PageController extends Controller
     public function getHome()
     {
     	$recommended = Product::InRandomOrder()->limit(4)->get();
-    	
-    	return view('welcome',['recommended' => $recommended]);
+    	$deals = Product::InRandomOrder()->limit(4)->get();
+    	return view('welcome',['recommended' => $recommended, 'deals'=>$deals]);
     }
 }

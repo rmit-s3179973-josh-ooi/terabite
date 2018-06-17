@@ -2,10 +2,10 @@
     <div class="top-nav">
         <div class="logo"><a href="{{route('website.get.home')}}"><img src="{{asset('assets/images/icons/Terabite-logo.png')}}" alt=""></a></div>
         <div class="search">
-        {!! Form::open() !!}
-        {!! Form::text('name',null,['class'=>'form-control input-search',]) !!}
+        <form method="POST" action="//localhost:3000/products" accept-charset="UTF-8" id="search-form">
+            <input class="form-control input-search" name="search" type="text" value="nokia">
         
-        {!! Form::close() !!}
+        </form>        
         </div>
         <div class="cart">
             <div class="cart-item">

@@ -2,6 +2,7 @@
 @import '_nav';
 @import '_crumbs';
 @import '_rating';
+@import '_quantity';
 
 .product-container{
 	@include span(1);
@@ -11,6 +12,10 @@
 
 		.image-wrap{
 			@include span(7/10);
+			position: relative;
+			img{
+				@include span(1);
+			}
 		}
 
 		.product-info{
@@ -19,36 +24,77 @@
 			padding:10px;
 
 			>div{
-				margin:10px 0;
+				margin:1em 0;
 			}
 
 			.product-price{
+				@include span(1);
 				text-align: center;
 				@include font-open-sans(bold,$light_blue,24pt);
 				
 			}
 
-			.quantity{
+			.delivery{
+				@include span(1);
 
+				.text1{
+					@include span(1);
+					@include font-open-sans(bold, $black, 10pt);
+				}
+
+				.text2-wrap{
+					@include span(1);
+					@include font-open-sans(normal, $black, 14pt);
+
+					.left-col{
+						@include column(8/10, $cycle:2);
+
+						.subtext{
+							@include font-open-sans(normal,$gray,12pt);
+						}
+					}
+
+					.right-col{
+						font-weight:bold;
+						text-align: center;
+					}
+
+					.right-col {
+						@include column(2/10, $cycle:2);
+					}
+				}
+			}
+
+			.quantity{
+				@include span(1);
 			}
 
 			.rating{
+				@include span(1);
 				font-size:35pt;
+				line-height:0px;
 				text-align: center;				
 			}
 
 			.btn-wrap{
+				@include span(1);
 				text-align: center;
 
 				.btn-add-to-cart{
-					border:none;
-					width:100%;
+					@include span(1);
+					border:none;					
 					padding:10px 0;
 					@include font-open-sans(bold, $white,15pt);
 					background: $light_blue;
+					cursor:pointer
 				}
 			}
 		}
+	}
+
+	.product-desc-wrap{
+		@include span(1);
+		margin:1em 0;
 	}
 
 	.product-review-wrap{
@@ -75,4 +121,45 @@
 			}
 		}
 	}	
+}
+
+
+/* Hide the images by default */
+.Slides {
+    display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  
+  position: absolute;
+  top: 45%;
+
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+
+  font-weight: normal;
+  font-size: 35px;
+  background-color:white;
+  border-radius: 0 1px 1px 0;
+  right:1075px;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0px;
+  border-radius: 1px 0 0 1px;
+  background-color:white;
+
+}
+
+.prev{
+	left:0;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: grey;
+ color:  #F2F2F2;
 }

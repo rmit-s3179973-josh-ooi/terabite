@@ -2,7 +2,7 @@
 	@include span(1);
 	text-align: center;
 	border:1px solid gray;
-
+	background: $white;
 	>div{
 		padding:10px;
 	}

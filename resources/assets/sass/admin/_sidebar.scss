@@ -1,0 +1,43 @@
+.sidebar{
+	height: 100%;
+	background: $dashboard_sidebar_bg;
+	color:$white;	
+	
+
+	.logo{
+		background:$dashboard_sidebar_bg_alt;		
+		font-size: 20pt;
+		padding:1em;
+		font-weight: bold;
+		// letter-spacing: 2px;		
+	}
+
+	.sidebar-item{
+		@include span(1);
+		padding:1em;		
+		line-height: 35px;
+		color:$dashboard_font_color_blue;
+
+		&:hover{
+			background:$dashboard_sidebar_bg_alt;
+		}
+
+		.icon,.label{
+			display: block;
+			height:30px;
+		}
+		.icon{
+			@include span(2/10);
+			text-align: center;
+		}
+		.label{
+			@include span(8/10);
+			line-height: 25px;
+		}
+
+		&.selected{
+			background:$dashboard_sidebar_bg_selected;
+			box-shadow: inset 0px 1px 6px rgba(0,0,0,0.08),inset 0px -1px 6px rgba(0,0,0,0.08);
+		}
+	}
+}

@@ -3,12 +3,10 @@
 @section('css')
 
 {!! Html::style(asset('assets/css/product.css')) !!}	
-{!! Html::style(asset('assets/ext/jquery-slideshow/slider.min.css')) !!}
 @endsection
 
 @section('js')
-{!! Html::script(asset('/js/counter.js')) !!}
-{!! Html::script(asset('assets/ext/jquery-slideshow/slider.min.js')) !!}
+
 @endsection
 
 
@@ -36,7 +34,7 @@
 		<div class="image-wrap">
 			<div class="product-image" name ="img" >
 			  @foreach ($product->images as $img)
-			          <img id="Slides" src="{{$img->url}}">
+			          <img class="Slides" src="{{$img->url}}">
 			      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
 			  <a class="next" onclick="plusSlides(1)">&#10095;</a>
 			  @endforeach
@@ -45,17 +43,32 @@
 		</div>
 		<div class="product-info">
 			<div class="product-price">
-				AUD {{$product->price }}
+				AUD {{$product->price/100 }}
 			</div>
-			<div class="delivery"></div>
+			<div class="delivery">
+				<div class="text1">Delivery Option:</div>
+				<div class="text2-wrap">
+					<div class="left-col">
+						<div class="text2">Standard Delivery</div>
+						<div class="subtext">Get By: {{now()->format('d M')}} - {{ now()->addDays(7)->format('d M') }}</div>
+					</div>
+					<div class="right-col">FREE</div>
+				</div>
+			</div>
 			<div class="quantity">
 				
+				<input type="hidden" value="1" class="number" name="quantity">
+				<div class="quantity-wrap">
+					<div class="decrease">-</div>
+					<div class="display">1</div>
+					<div class="increase">+</div>
+				</div>
 			</div>
 			<div class="rating">
 				@component('components/rating',['rating'=>$product->rating])@endcomponent
 			</div>
 			<div class="btn-wrap">
-				<button type="submit" class="btn-add-to-cart">ADD TO CART</button>
+				<a class="btn-add-to-cart" href="{{ route('cart.get.add',['id'=>$product->id]) }}">ADD TO CART</a>
 			</div>
 		</div>
 	</div>
@@ -90,7 +103,12 @@
 
 
 @section('footer')
+{!! Html::script(asset('/js/counter.js')) !!}
+{!! Html::script(asset('/js/slides.js')) !!}
+{!! Html::script('assets/js/addToCart.min.js') !!}
+{!! Html::script(asset('assets/js/quantity.min.js')) !!}
 <script type="text/javascript">
- 
+ $(".btn-add-to-cart").addToCart({hasQty:true, input: ".number"});
+ 	var quantity = new Quantity();
 </script>
 @endsection

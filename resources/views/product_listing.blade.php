@@ -90,11 +90,13 @@
 
 {!! Html::script(asset('assets/js/jquery.serializeObject.min.js')) !!}
 {!! Html::script(asset('assets/js/filter.min.js')) !!}
+{!! Html::script('assets/js/addToCart.min.js') !!}
 <script>
     $("#filter-form").formSubmit("filter");
     $("#sort-form").formSubmit("sort");
     $("#sort-select").change(function(){
         $("#sort-form").submit();
     });
+    $(".add-to-cart-link").addToCart();
 </script>
 @endsection

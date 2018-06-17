@@ -1,0 +1,67 @@
+@import '_default';
+@import '_nav';
+@import '_error';
+
+.category{
+	@include span(1);
+	margin-bottom:3em;
+
+	h1{
+		text-align: center;
+		@include font-roboto(bold,$dark-blue,35pt);
+	}
+	.category-list-wrap{
+		@include span(2/3);
+		float:none;
+		margin:0 auto;
+
+		.category-item{
+			@include span(1/2);
+			margin: 0.5em 0;
+			@include font-open-sans(bold, $blue, 14pt);
+			
+			.checkbox{
+				position: relative;
+			}
+			
+
+			.show{
+				display:inherit;
+			}
+
+			.count{
+				padding:0.5em;
+				background: $dark-blue;
+				@include font-open-sans(bold, $white,10pt);
+				border-radius:50%;
+				height:25px;
+				width:25px;
+				display:inline-block;
+				text-align: center;
+				line-height:13px;				
+			}
+
+			.hide{
+				display:none;
+			}
+		}
+
+
+	}
+
+	.btn-wrap{
+			@include span(1);
+			margin:1em 0;
+			text-align: center;
+		}
+
+	.btn-submit{
+		@include span(1/2);
+		background: $dark-blue;
+		line-height:35px;
+		text-align: center;
+		float:none;
+		margin:0 auto;
+		@include font-open-sans(bold,$white,16pt);
+	}
+}

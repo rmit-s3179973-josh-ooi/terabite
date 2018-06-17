@@ -13,3 +13,4 @@ yarn-error.log
 .env
 **/Vagrantfile
 **/.DS_Store
+/public/images

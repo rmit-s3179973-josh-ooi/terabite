@@ -78,6 +78,11 @@ class ProductController extends Controller
 
     private function searchQuery(Collection $products, $searchQuery)
     {
+        $strArray = explode(" ",$searchQuery);
+        $allProducts = Product::where('product_name', 'like', '%' . $searchQuery . '%')->get();
+        
+        $products = $allProducts->intersect($products);
+        
         return $products;
     }
 

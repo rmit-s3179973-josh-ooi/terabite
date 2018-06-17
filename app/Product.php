@@ -55,4 +55,9 @@ class Product extends Model
             return $item["manufacturer"];
         })->toArray(); 
     }
+
+    public function cartDisplay()
+    {
+        return ["image" => $this->images->first()->url, "product_name"=>$this->product_name];
+    }
 }
