@@ -95,6 +95,8 @@ class CheckoutController extends Controller
     public function postAddAddress(Request $request)
     {        
         $this->createAddress($request->all());
+
+        return redirect()->route('checkout.get.view');
     }
 
     public function getComplete($id)
